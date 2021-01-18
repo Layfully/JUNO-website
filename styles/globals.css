@@ -1,16 +1,14 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ul>li::before {
+    @apply text-4xl text-orange text-opacity-60 pr-2;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+ul.list-star>li::before {
+    content: "\2605";
 }
 
-* {
-  box-sizing: border-box;
+ul.list-bullet>li::before {
+    content: "\25CF";
 }
