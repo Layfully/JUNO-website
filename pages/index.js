@@ -37,13 +37,13 @@ intends to excite people for the fascinating world of particle physics.</li>
         <div className="relative px-8">
           <h1 className="text-6xl text-white text-opacity-50 font-mono font-bold mb-16 " ><span className="custom-underline">Le</span>arn more about:</h1>
           <h2 className="text-4xl text-white text-opacity-50 font-mono font-bold my-8">World of particle physics</h2>
-          <ul className="list-bullet text-left ">
+          <ul className="list-bullet text-left ml-8">
             <li className="text-2xl text-white text-opacity-50 font-mono">Particle Physics at CERN</li>
             <li className="text-2xl text-white text-opacity-50 font-mono">Particle Physics at ALTAS</li>
             <li className="text-2xl text-white text-opacity-50 font-mono">The Standard Model of Particle Physics</li>
           </ul>
           <h2 className="text-4xl text-white text-opacity-50 font-mono font-bold my-8">Laboratories discovered J/ψ</h2>
-          <ul className="list-bullet text-left">
+          <ul className="list-bullet text-left ml-8">
             <li className="text-2xl text-white text-opacity-50 font-mono">SLAC - Stanford Linear Accelerator Center</li>
             <li className="text-2xl text-white text-opacity-50 font-mono">History of SLAC</li>
             <li className="text-2xl text-white text-opacity-50 font-mono">BNL - Brookhaven National Laboratory</li>

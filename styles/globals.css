@@ -1,8 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ul>li {
+    @apply relative flex items-center;
+}
+
 ul>li::before {
-    @apply text-4xl text-orange text-opacity-60 pr-2;
+    @apply text-4xl text-orange text-opacity-60 absolute -left-8;
 }
 
 ul.list-star>li::before {
