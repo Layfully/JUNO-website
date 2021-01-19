@@ -12,3 +12,14 @@ ul.list-star>li::before {
 ul.list-bullet>li::before {
     content: "\25CF";
 }
+
+.custom-underline {
+    @apply relative inline-block;
+}
+
+.custom-underline::before {
+    @apply absolute bg-current left-1 bottom-0;
+    content: "";
+    height: 3px;
+    width: 70%;
+}
