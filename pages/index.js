@@ -8,12 +8,31 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <header>
+        <div className="hamburger fixed top-2 right-2 bg-orange opacity-60 z-10 p-2 w-10 h-10 rounded-md">
+          <input type="checkbox" className="absolute right-0 w-10 h-10 cursor-pointer z-20 opacity-0 top-0" />
+          <div className="flex flex-col justify-center h-full">
+            <span className="block bg-black relative mx-auto z-10"></span>
+            <span className="block bg-black relative mx-auto z-10"></span>
+            <span className="block bg-black relative mx-auto z-10 "></span>
+          </div>
 
-      <main className={styles.main}>
-        <h1 className={styles.title, "text-4xl text-white text-opacity-50 font-title"}>
-          J/ψ <span className="custom-underline">U</span>nder Observation ...
-        </h1>
-        <h2 className="text-2xl text-orange text-opacity-60 font-mono">Physics story explained easy</h2>
+          <ul id="menu" className="fixed w-72 bg-white opacity-50 right-0 top-0 rounded-l-2xl">
+            <a href="#"><li>Home</li></a>
+            <a href="#"><li>Story</li></a>
+            <a href="#"><li>Teaser</li></a>
+            <a href="#"><li>Progress</li></a>
+            <a href="#"><li>About</li></a>
+          </ul>
+        </div>
+      </header>
+      <main className={styles.main, "pt-10"}>
+        <header className="text-center space-y-4">
+          <h1 className={styles.title, "text-4xl text-white text-opacity-50 font-title"}>
+            J/ψ <span className="custom-underline">U</span>nder Observation ...
+          </h1>
+          <h2 className="text-2xl text-orange text-opacity-60 font-mono">Physics story explained easy</h2>
+        </header>
 
         <ul className="list-star text-lg text-white text-opacity-50 font-mono">
           <li>J/psi UNder Observation (JUNO) is a visualization of the J/psi particle discovery in virtual reality
