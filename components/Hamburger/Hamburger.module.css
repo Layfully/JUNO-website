@@ -1,0 +1,35 @@
+.hamburgerContainer {
+    @apply flex flex-col justify-center h-full;
+}
+
+.hamburgerLine {
+    @apply h-1 w-5 mb-1 transition-transform rounded block bg-black relative mx-auto z-30;
+}
+
+.hamburgerToggle {
+    @apply absolute right-0 w-10 h-10 cursor-pointer z-40 opacity-0 top-0;
+}
+
+.hamburgerLine:first-child {
+    @apply origin-top-left;
+}
+
+.hamburgerLine:last-of-type {
+    @apply mb-0;
+}
+
+.hamburgerLine:nth-last-child(2) {
+    @apply origin-bottom-left;
+}
+
+input:checked~.hamburgerContainer>.hamburgerLine:first-child {
+    @apply bg-orange opacity-60 transform rotate-45 translate-x-1 translate-y-px duration-300;
+}
+
+input:checked~.hamburgerContainer>.hamburgerLine:nth-child(2) {
+    @apply opacity-0 transform scale-0;
+}
+
+input:checked~.hamburgerContainer>.hamburgerLine:last-child {
+    @apply bg-orange opacity-60 transform -rotate-45 -translate-y-2 duration-300;
+}

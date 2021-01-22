@@ -9,7 +9,7 @@ module.exports = {
         mono: ['Lekton', ...defaultTheme.fontFamily.mono]
       },
       colors: {
-        orange: '#FF7A00'
+        orange: 'rgba(255, 121, 0, var(--tw-bg-opacity))'
       }
     },
     fontFamily: {
