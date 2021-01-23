@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Menu from '../components/Menu/Menu'
+import { FooterBackground } from '../components/Svg'
+
 
 export default function Home() {
   return (
@@ -9,22 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <div className="hamburger fixed top-2 right-2 bg-orange opacity-60 z-10 p-2 w-10 h-10 rounded-md">
-          <input type="checkbox" className="absolute right-0 w-10 h-10 cursor-pointer z-20 opacity-0 top-0" />
-          <div className="flex flex-col justify-center h-full">
-            <span className="block bg-black relative mx-auto z-10"></span>
-            <span className="block bg-black relative mx-auto z-10"></span>
-            <span className="block bg-black relative mx-auto z-10 "></span>
-          </div>
-
-          <ul id="menu" className="fixed w-72 bg-white opacity-50 right-0 top-0 rounded-l-2xl">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>Story</li></a>
-            <a href="#"><li>Teaser</li></a>
-            <a href="#"><li>Progress</li></a>
-            <a href="#"><li>About</li></a>
-          </ul>
-        </div>
+        <Menu />
       </header>
       <main className={styles.main, "pt-10"}>
         <header className="text-center space-y-4">
@@ -47,11 +35,9 @@ intends to excite people for the fascinating world of particle physics.</li>
         </div>
       </main>
 
-      <footer className={styles.footer, "wave-container text-center relative"}>
+      <footer className={styles.footer, "wave-container text-center relative"} id="about">
         <div className="absolute bottom-0">
-          <svg width="1920" height="1200" viewBox="0 0 1920 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1354.39 200.168C1297.9 14.5135 687.099 10.809 -1 0V1200H2018.1L2299 1131.94C2270.49 1022.02 2174.39 785.955 2018.1 721.101C1861.81 656.247 1615.23 951.795 1223.45 818.684C870.74 716.599 1410.89 385.823 1354.39 200.168Z" fill="#231F1F" />
-          </svg>
+          <FooterBackground />
         </div>
         <div className="relative px-8">
           <h1 className="text-6xl text-white text-opacity-50 font-mono font-bold mb-16 " ><span className="custom-underline">Le</span>arn more about:</h1>
