@@ -32,4 +32,17 @@ const FooterBackground = () => (
     </svg>
 )
 
-export { GithubIcon, YoutubeIcon, InstagramIcon, TwitterIcon, FooterBackground }
+const SvgIcon = (props) => {
+    switch (props.icon) {
+        case "Github":
+            return <GithubIcon />
+        case "Youtube":
+            return <YoutubeIcon />
+        case "Instagram":
+            return <InstagramIcon />
+        case "Twitter":
+            return <TwitterIcon />
+    }
+}
+
+export { SvgIcon, GithubIcon, YoutubeIcon, InstagramIcon, TwitterIcon, FooterBackground }

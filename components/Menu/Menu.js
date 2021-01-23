@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionLink from '../SectionLink'
 import Hamburger from '../Hamburger/Hamburger'
-import { GithubIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from '../Svg'
+import { SvgIcon } from '../Svg'
 import styles from './Menu.module.css'
 
 class Menu extends React.Component {
@@ -14,59 +14,72 @@ class Menu extends React.Component {
             sections: [
                 {
                     title: "Home",
-                    href: "/#Home",
-                    key: 0
+                    href: "/#Home"
                 },
                 {
                     title: "Story",
-                    href: "/#Story",
-                    key: 1
+                    href: "/#Story"
                 },
                 {
                     title: "Teaser",
-                    href: "/#Teaser",
-                    key: 2
+                    href: "/#Teaser"
                 },
                 {
                     title: "Progress",
-                    href: "/#Progress",
-                    key: 3
+                    href: "/#Progress"
                 },
                 {
                     title: "About",
-                    href: "/#About",
-                    key: 4
+                    href: "/#About"
+                }
+            ],
+            socialMedia: [
+                {
+                    icon: "Github",
+                    href: "https://github.com/JPsiInVR"
+                },
+                {
+                    icon: "Youtube",
+                    href: "https://www.youtube.com/channel/UC9OGzydXjsrVAw2Dv6VZw9A"
+                },
+                {
+                    icon: "Twitter",
+                    href: "https://twitter.com/JUNO_2021"
+                },
+                {
+                    icon: "Instagram",
+                    href: "https://www.instagram.com/jpsiunderobservation/"
                 }
             ]
         }
-
-        this.toggleMenu = this.toggleMenu.bind(this)
-        this.changeActiveSection = this.changeActiveSection.bind(this)
-        this.enableMenuOnLargeDevices = this.enableMenuOnLargeDevices.bind(this)
     }
 
-    enableMenuOnLargeDevices() {
+    enableMenuOnLargeDevices = () => {
         //default lg breakpoint
         if (window.innerWidth > 1024) {
             this.isOpen = this.setState({ isOpen: true })
         }
     }
 
-    toggleMenu(event) {
+    toggleMenu = (event) => {
         this.setState({ isOpen: event.target.checked })
     }
 
-    changeActiveSection(newSection) {
+    changeActiveSection = (newSection) => {
         this.setState({ activeSection: newSection })
     }
 
     componentDidMount() {
-        this.enableMenuOnLargeDevices()
-        window.addEventListener('resize', this.enableMenuOnLargeDevices)
+        if (typeof window !== 'undefined') {
+            this.enableMenuOnLargeDevices()
+            window.addEventListener('resize', this.enableMenuOnLargeDevices)
+        }
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.enableMenuOnLargeDevices)
+        if (typeof window !== 'undefined') {
+            window.removeEventListener('resize', this.enableMenuOnLargeDevices)
+        }
     }
 
 
@@ -82,9 +95,9 @@ class Menu extends React.Component {
                 <nav className={`${styles.menu} ${this.state.isOpen ? "transform translate-x-0" : "transform translate-x-full"}`}>
                     <ul id={styles.menuLinkList}>
                         {
-                            this.state.sections.map(section =>
-                                <li key={section.key}>
-                                    <SectionLink isActive={section.key == this.state.activeSection} section={section} onClick={this.changeActiveSection} />
+                            this.state.sections.map((section, index) =>
+                                <li key={section.title}>
+                                    <SectionLink isActive={index === this.state.activeSection} section={section} onClick={() => this.changeActiveSection(index)} />
                                 </li>)
                         }
                     </ul>
@@ -92,10 +105,13 @@ class Menu extends React.Component {
                     <div id={styles.activeSectionIndicator} style={offset} />
 
                     <div id={styles.socialMediaLinkList}>
-                        <a className="block" href="https://github.com/JPsiInVR"><GithubIcon /></a>
-                        <a className="block" href="https://www.youtube.com/channel/UC9OGzydXjsrVAw2Dv6VZw9A"><YoutubeIcon /></a>
-                        <a className="block" href="https://twitter.com/JUNO_2021"><TwitterIcon /></a>
-                        <a className="block" href="https://www.instagram.com/jpsiunderobservation/"><InstagramIcon /></a>
+                        {
+                            this.state.socialMedia.map(socialMedium =>
+                                <a className="block" href={socialMedium.href}>
+                                    <SvgIcon icon={socialMedium.icon} />
+                                </a>
+                            )
+                        }
                     </div>
                 </nav>
             </>

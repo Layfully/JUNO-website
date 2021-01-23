@@ -1,3 +1,7 @@
+.hamburger {
+    @apply fixed top-2 right-2 transition-colors duration-500 bg-orange z-30 p-2 w-10 h-10 rounded-md;
+}
+
 .hamburgerContainer {
     @apply flex flex-col justify-center h-full;
 }
@@ -32,4 +36,10 @@ input:checked~.hamburgerContainer>.hamburgerLine:nth-child(2) {
 
 input:checked~.hamburgerContainer>.hamburgerLine:last-child {
     @apply bg-orange opacity-60 transform -rotate-45 -translate-y-2 duration-300;
+}
+
+@screen lg {
+    .hamburger {
+        @apply hidden;
+    }
 }
