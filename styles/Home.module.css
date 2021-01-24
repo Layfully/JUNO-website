@@ -1,0 +1,24 @@
+.main {
+    @apply pt-10;
+}
+
+.teaserContainer {
+    @apply relative;
+    padding-top: 56.25%;
+}
+
+.teaser {
+    @apply absolute inset-0 w-full h-full;
+    max-height: calc(100vh - theme('spacing.8'))
+}
+
+@screen lg {
+    /* Space for menu + 4 rem from both sides */
+    .main {
+        @apply ml-16 mr-72;
+    }
+    /* Height screen - 8 rem, (4 for both sides)*/
+    .teaser {
+        max-height: calc(100vh - theme('spacing.32'))
+    }
+}

@@ -14,7 +14,7 @@ export default function Home() {
       <header>
         <Menu />
       </header>
-      <main className={styles.main, "pt-10"}>
+      <main className={styles.main}>
         <header className="text-center space-y-4">
           <h1 className={styles.title, "text-4xl text-white text-opacity-50 font-title"}>
             J/ψ <span className="custom-underline">U</span>nder Observation ...
@@ -30,12 +30,18 @@ intends to excite people for the fascinating world of particle physics.</li>
           <li>Follow the J/psi along its virtual journey and get to know the tiny particles that build the matter surrounding us</li>
         </ul>
 
+        <section id="Teaser">
+          <div className={styles.teaserContainer}>
+            <iframe className={styles.teaser} src="https://www.youtube-nocookie.com/embed/wjs4eJPYDzQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </section>
+
         <div className="text-3xl text-orange text-opacity-60 font-mono">
           Visualization of Data-Acquisition at BNL
         </div>
       </main>
 
-      <footer className={styles.footer, "wave-container text-center relative"} id="about">
+      <footer className={styles.footer, "wave-container text-center relative mt-96"} id="About">
         <div className="absolute bottom-0">
           <FooterBackground />
         </div>
