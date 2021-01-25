@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        sans: ['Lekton', ...defaultTheme.fontFamily.sans],
         mono: ['Lekton', ...defaultTheme.fontFamily.mono]
       },
       colors: {

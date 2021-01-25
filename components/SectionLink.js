@@ -6,7 +6,7 @@ const SectionLink = props => {
 
     return (
         <Link href={props.section.href} >
-            <a onClick={props.onClick} className={"ml-auto text-white transition-colors duration-500 hover:text-opacity-80 " + style}>{props.section.title}</a>
+            <a onClick={props.onClick} className={"text-white transition-colors duration-500 hover:text-opacity-80 " + style}>{props.section.title}</a>
         </Link>
     )
 }

@@ -1,13 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.custom-underline {
-    @apply relative inline-block;
+h1 {
+    @apply text-6xl text-white text-opacity-50 my-8;
 }
 
-.custom-underline::before {
-    @apply absolute bg-current left-1 bottom-0;
-    content: "";
-    height: 3px;
-    width: 70%;
+h2 {
+    @apply text-4xl;
+}
+
+li {
+    @apply text-2xl;
+}
+
+.orangeText {
+    @apply text-orange text-opacity-60;
+}
+
+.whiteText {
+    @apply text-white text-opacity-50;
 }
