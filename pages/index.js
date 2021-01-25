@@ -21,14 +21,15 @@ export default function Home() {
           </h1>
           <h2 className="text-2xl text-orange text-opacity-60 font-mono">Physics story explained easy</h2>
         </header>
-
-        <ul className="list-star text-lg text-white text-opacity-50 font-mono">
-          <li>J/psi UNder Observation (JUNO) is a visualization of the J/psi particle discovery in virtual reality
-(VR). </li>
-          <li>The JUNO adventure introduces the viewer into the exciting world of particle physics and
-intends to excite people for the fascinating world of particle physics.</li>
-          <li>Follow the J/psi along its virtual journey and get to know the tiny particles that build the matter surrounding us</li>
-        </ul>
+        <section id="Story">
+          <ul className={`${styles.list} ${styles.listStar} space-y-8`}>
+            <li>J/ψ UNder Observation (JUNO) is a visualization of the J/ψ particle discovery in virtual reality (VR). </li>
+            <li>The JUNO adventure introduces you to the exciting world of particle physics and can be enjoyed using the Google Cardboard coupled with any smartphone. It intends to give insight into the groundbreaking physics experiments involved in the J/ψ discovery in 1974 and highlights their different approaches.
+</li>
+            <li>In a second story line, you can experiencet the subatomic particles being protagonists themselves, as they question the social order of their world.
+Join J/ψ and its friends along in their virtual revolution and get to know the tiny particles that build the matter surrounding us!</li>
+          </ul>
+        </section>
 
         <section id="Teaser">
           <div className={styles.teaserContainer}>
@@ -48,13 +49,13 @@ intends to excite people for the fascinating world of particle physics.</li>
         <div className="relative px-8">
           <h1 className="text-6xl text-white text-opacity-50 font-mono font-bold mb-16 " ><span className="custom-underline">Le</span>arn more about:</h1>
           <h2 className="text-4xl text-white text-opacity-50 font-mono font-bold my-8">World of particle physics</h2>
-          <ul className="list-bullet text-left ml-8">
+          <ul className={`${styles.list} ${styles.listBullet} text-left`}>
             <li className="text-2xl text-white text-opacity-50 font-mono">Particle Physics at CERN</li>
             <li className="text-2xl text-white text-opacity-50 font-mono">Particle Physics at ALTAS</li>
             <li className="text-2xl text-white text-opacity-50 font-mono">The Standard Model of Particle Physics</li>
           </ul>
           <h2 className="text-4xl text-white text-opacity-50 font-mono font-bold my-8">Laboratories discovered J/ψ</h2>
-          <ul className="list-bullet text-left ml-8">
+          <ul className={`${styles.list} ${styles.listBullet} text-left`}>
             <li className="text-2xl text-white text-opacity-50 font-mono">SLAC - Stanford Linear Accelerator Center</li>
             <li className="text-2xl text-white text-opacity-50 font-mono">History of SLAC</li>
             <li className="text-2xl text-white text-opacity-50 font-mono">BNL - Brookhaven National Laboratory</li>

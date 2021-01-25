@@ -1,22 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-ul>li {
-    @apply relative flex items-center;
-}
-
-ul>li::before {
-    @apply text-4xl text-orange text-opacity-60 absolute -left-8;
-}
-
-ul.list-star>li::before {
-    content: "\2605";
-}
-
-ul.list-bullet>li::before {
-    content: "\25CF";
-}
-
 .custom-underline {
     @apply relative inline-block;
 }
