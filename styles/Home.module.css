@@ -1,5 +1,5 @@
 .main {
-    @apply pt-10;
+    @apply pt-10 mx-4;
 }
 
 .teaserContainer {
@@ -12,6 +12,26 @@
     max-height: calc(100vh - theme('spacing.8'))
 }
 
+.list {
+    @apply text-lg text-white text-opacity-50 font-mono;
+}
+
+.list>li {
+    @apply relative flex ml-10 mr-10;
+}
+
+.list>li::before {
+    @apply text-4xl leading-none text-orange text-opacity-60 absolute -left-10;
+}
+
+.listStar>li::before {
+    content: "\2605";
+}
+
+.listBullet>li::before {
+    content: "\25CF";
+}
+
 @screen lg {
     /* Space for menu + 4 rem from both sides */
     .main {
@@ -20,5 +40,8 @@
     /* Height screen - 8 rem, (4 for both sides)*/
     .teaser {
         max-height: calc(100vh - theme('spacing.32'))
+    }
+    .list>li {
+        @apply mr-0;
     }
 }
