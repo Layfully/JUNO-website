@@ -13,6 +13,7 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css2?family=Lekton:wght@400;700&display=swap" rel="stylesheet" />
+          <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
         </Head>
         <body>
           <Main />

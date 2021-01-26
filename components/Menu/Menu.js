@@ -82,6 +82,11 @@ class Menu extends React.Component {
         }
     }
 
+    scrollToElement = (section) => {
+        const element = document.getElementById(section.href.substring(2))
+        element.scrollIntoView({ behavior: 'smooth' })
+    }
+
 
     render() {
         const offset = {
@@ -97,7 +102,7 @@ class Menu extends React.Component {
                         {
                             this.state.sections.map((section, index) =>
                                 <li key={section.title}>
-                                    <SectionLink isActive={index === this.state.activeSection} section={section} onClick={() => this.changeActiveSection(index)} />
+                                    <SectionLink isActive={index === this.state.activeSection} section={section} onClick={() => { this.changeActiveSection(index); this.scrollToElement(section) }} />
                                 </li>)
                         }
                     </ul>
