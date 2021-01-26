@@ -1,22 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-h1 {
-    @apply text-6xl text-white text-opacity-50 my-8;
-}
-
-h2 {
-    @apply text-4xl;
-}
-
-li {
-    @apply text-2xl;
-}
-
-.orangeText {
-    @apply text-orange text-opacity-60;
-}
-
-.whiteText {
-    @apply text-white text-opacity-50;
-}

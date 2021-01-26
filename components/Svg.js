@@ -1,6 +1,6 @@
 import useWindowSize from '../hooks/useWindowSize'
 
-const hoverIconStyle = "transition-opacity opacity-60 hover:opacity-100"
+const hoverIconStyle = "transition-opacity opacity-60 duration-300 ease-in hover:opacity-100"
 
 const GithubIcon = () => (
     <svg className={hoverIconStyle} width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">

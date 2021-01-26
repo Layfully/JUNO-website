@@ -6,8 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Lekton', ...defaultTheme.fontFamily.sans],
-        mono: ['Lekton', ...defaultTheme.fontFamily.mono]
+        sans: ['Lekton', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         orange: '#ff7900'
