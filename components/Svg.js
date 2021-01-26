@@ -1,4 +1,6 @@
-const hoverIconStyle = "transition-opacity opacity-60 hover:opacity-100"
+import useWindowSize from '../hooks/useWindowSize'
+
+const hoverIconStyle = "transition-opacity opacity-60 duration-300 ease-in hover:opacity-100"
 
 const GithubIcon = () => (
     <svg className={hoverIconStyle} width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,11 +28,25 @@ const TwitterIcon = () => (
     </svg>
 )
 
-const FooterBackground = () => (
-    <svg width="1920" height="1200" viewBox="0 0 1920 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1354.39 200.168C1297.9 14.5135 687.099 10.809 -1 0V1200H2018.1L2299 1131.94C2270.49 1022.02 2174.39 785.955 2018.1 721.101C1861.81 656.247 1615.23 951.795 1223.45 818.684C870.74 716.599 1410.89 385.823 1354.39 200.168Z" fill="#231F1F" />
+const FooterBackgroundMobile = () => (
+    <svg className="h-full w-screen" viewBox="0 0 862 1200" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M862 1200V37.7313C634.67 9.32463 326.889 5.62397 0 0V1200H862Z" fill="#231F1F" />
     </svg>
 )
+
+const FooterBackgroundDesktop = () => (
+    <svg className="h-full w-screen" preserveAspectRatio="none" viewBox="0 0 1919 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1303.71 200.168C1249.33 14.5135 661.37 10.809 -1 0V1200H1918.5V713.811C1767.17 685.735 1535.25 944.895 1177.67 818.684C838.145 716.599 1358.1 385.823 1303.71 200.168Z" fill="#231F1F" />
+    </svg>
+)
+
+const FooterBackground = () => (
+    //lg breakpoint
+    <div className="absolute bottom-0 h-full">
+        {useWindowSize().width > 1024 ? <FooterBackgroundDesktop /> : <FooterBackgroundMobile />}
+    </div>
+)
+
 
 const SvgIcon = (props) => {
     switch (props.icon) {

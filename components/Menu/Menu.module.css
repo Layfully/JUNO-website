@@ -3,7 +3,7 @@
 }
 
 #menuLinkList {
-    @apply space-y-3 text-2xl text-right font-mono;
+    @apply space-y-3 text-right;
 }
 
 #socialMediaLinkList {

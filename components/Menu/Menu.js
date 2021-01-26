@@ -106,8 +106,8 @@ class Menu extends React.Component {
 
                     <div id={styles.socialMediaLinkList}>
                         {
-                            this.state.socialMedia.map(socialMedium =>
-                                <a className="block" href={socialMedium.href}>
+                            this.state.socialMedia.map((socialMedium, index) =>
+                                <a className="block" key={index} href={socialMedium.href}>
                                     <SvgIcon icon={socialMedium.icon} />
                                 </a>
                             )

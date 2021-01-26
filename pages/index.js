@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Menu from '../components/Menu/Menu'
+import Text from '../components/Text'
 import { FooterBackground } from '../components/Svg'
 
 
 export default function Home() {
   return (
-    <div className={styles.container, "bg-black overflow-x-hidden"}>
+    <div className="bg-black overflow-x-hidden">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -16,61 +17,61 @@ export default function Home() {
       </header>
       <main className={styles.main}>
         <header className="text-center space-y-4">
-          <h1 className={styles.title, "text-4xl text-white text-opacity-50 font-title"}>
-            J/ψ <span className="custom-underline">U</span>nder Observation ...
-          </h1>
-          <h2 className="text-2xl text-orange text-opacity-60 font-mono">Physics story explained easy</h2>
+          <Text size="h1" custom="font-title">
+            J/ψ <span className={styles.customUnderline}>U</span>nder Observation ...
+          </Text>
+          <Text size="h2" color="orange">
+            Physics story explained easy
+          </Text>
         </header>
         <section id="Story">
           <ul className={`${styles.list} ${styles.listStar} space-y-8`}>
-            <li>J/ψ UNder Observation (JUNO) is a visualization of the J/ψ particle discovery in virtual reality (VR). </li>
-            <li>The JUNO adventure introduces you to the exciting world of particle physics and can be enjoyed using the Google Cardboard coupled with any smartphone. It intends to give insight into the groundbreaking physics experiments involved in the J/ψ discovery in 1974 and highlights their different approaches.
-</li>
-            <li>In a second story line, you can experiencet the subatomic particles being protagonists themselves, as they question the social order of their world.
-Join J/ψ and its friends along in their virtual revolution and get to know the tiny particles that build the matter surrounding us!</li>
+            <li><Text>J/ψ UNder Observation (JUNO) is a visualization of the J/ψ particle discovery in virtual reality (VR). </Text></li>
+            <li><Text>The JUNO adventure introduces you to the exciting world of particle physics and can be enjoyed using the Google Cardboard coupled with any smartphone. It intends to give insight into the groundbreaking physics experiments involved in the J/ψ discovery in 1974 and highlights their different approaches.
+            </Text></li>
+            <li><Text>In a second story line, you can experiencet the subatomic particles being protagonists themselves, as they question the social order of their world.
+Join J/ψ and its friends along in their virtual revolution and get to know the tiny particles that build the matter surrounding us!</Text></li>
           </ul>
         </section>
 
         <section id="Teaser">
           <div className={styles.teaserContainer}>
-            <iframe className={styles.teaser} src="https://www.youtube-nocookie.com/embed/wjs4eJPYDzQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe className={styles.teaser} src="https://www.youtube-nocookie.com/embed/wjs4eJPYDzQ" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
           </div>
         </section>
 
-        <div className="text-3xl text-orange text-opacity-60 font-mono">
+        <div className="text-3xl text-orange text-opacity-60">
           Visualization of Data-Acquisition at BNL
         </div>
       </main>
 
-      <footer className={styles.footer, "wave-container text-center relative mt-96"} id="About">
-        <div className="absolute bottom-0">
-          <FooterBackground />
-        </div>
-        <div className="relative px-8">
-          <h1 className="text-6xl text-white text-opacity-50 font-mono font-bold mb-16 " ><span className="custom-underline">Le</span>arn more about:</h1>
-          <h2 className="text-4xl text-white text-opacity-50 font-mono font-bold my-8">World of particle physics</h2>
+      <footer className={styles.footerContainer} id="About">
+        <FooterBackground />
+        <div className={styles.footer}>
+          <Text size="h1" custom="font-bold pt-16 pb-8"><span className={styles.customUnderline}>Le</span>arn more about:</Text>
+          <Text size="h2" custom="font-bold my-8">World of particle physics</Text>
           <ul className={`${styles.list} ${styles.listBullet} text-left`}>
-            <li className="text-2xl text-white text-opacity-50 font-mono">Particle Physics at CERN</li>
-            <li className="text-2xl text-white text-opacity-50 font-mono">Particle Physics at ALTAS</li>
-            <li className="text-2xl text-white text-opacity-50 font-mono">The Standard Model of Particle Physics</li>
+            <li><Text hover><a href="https://home.cern/science/physics">Particle Physics at CERN</a></Text></li>
+            <li><Text hover><a href="https://atlas.cern/discover/physics">Particle Physics at ALTAS</a></Text></li>
+            <li><Text hover><a href="https://home.cern/science/physics/standard-model">The Standard Model of Particle Physics</a></Text></li>
           </ul>
-          <h2 className="text-4xl text-white text-opacity-50 font-mono font-bold my-8">Laboratories discovered J/ψ</h2>
+          <Text size="h2" custom="font-bold my-8">Laboratories that discovered J/ψ</Text>
           <ul className={`${styles.list} ${styles.listBullet} text-left`}>
-            <li className="text-2xl text-white text-opacity-50 font-mono">SLAC - Stanford Linear Accelerator Center</li>
-            <li className="text-2xl text-white text-opacity-50 font-mono">History of SLAC</li>
-            <li className="text-2xl text-white text-opacity-50 font-mono">BNL - Brookhaven National Laboratory</li>
-            <li className="text-2xl text-white text-opacity-50 font-mono">History of discoveries at BNL</li>
+            <li><Text hover><a href="https://www6.slac.stanford.edu/about/slac-overview">SLAC - Stanford Linear Accelerator Center</a></Text></li>
+            <li><Text hover><a href="https://www6.slac.stanford.edu/about/slac-history">History of SLAC</a></Text></li>
+            <li><Text hover><a href="https://www.bnl.gov/about/w">BNL - Brookhaven National Laboratory</a></Text></li>
+            <li><Text hover><a href="https://www.bnl.gov/about/history/discoveries.php">History of discoveries at BNL</a></Text></li>
           </ul>
-          <h2 className="text-4xl text-white text-opacity-50 font-mono font-bold my-8">Stay up to date:</h2>
-          <div className="grid grid-cols-3 gap-4 text-left">
-            <a className="text-2l text-orange text-opacity-60 font-mono font-bold">Symmetry Magazine</a>
-            <a className="text-2l text-orange text-opacity-60 font-mono font-bold">Quanta Maganizne</a>
-            <a className="text-2l text-orange text-opacity-60 font-mono font-bold">Nature Research</a>
-            <a className="text-2l text-orange text-opacity-60 font-mono font-bold">Fermilab at Work</a>
-            <a className="text-2l text-orange text-opacity-60 font-mono font-bold">CMS</a>
-            <a className="text-2l text-orange text-opacity-60 font-mono font-bold ">Quiz</a>
+          <Text size="h2" custom="font-bold my-8">Stay up to date:</Text>
+          <div className={styles.linkContainer}>
+            <Text color="orange" size="body-base" hover><a href="https://www.symmetrymagazine.org/">Symmetry Magazine</a></Text>
+            <Text color="orange" size="body-base" hover><a href="https://www.quantamagazine.org/tag/particle-physics/">Quanta Maganizne</a></Text>
+            <Text color="orange" size="body-base" hover><a href="https://www.nature.com/subjects/particle-physics">Nature Research</a></Text>
+            <Text color="orange" size="body-base" hover><a href="https://news.fnal.gov/fermilab-at-work/">Fermilab at Work</a></Text>
+            <Text color="orange" size="body-base" hover><a href="https://cms.cern/">CMS</a></Text>
+            <Text color="orange" size="body-base" hover><a href="https://particleadventure.org/">Quiz</a></Text>
           </div>
-          <p className="text-2l text-white text-opacity-50 font-mono               py-14 pb-4">2021 &#169; Juno</p>
+          <Text size="body-base" custom="text-center pt-14 pb-4">2021 &#169; Juno</Text>
         </div>
       </footer>
     </div >

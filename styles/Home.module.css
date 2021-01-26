@@ -13,7 +13,7 @@
 }
 
 .list {
-    @apply text-lg text-white text-opacity-50 font-mono;
+    @apply text-lg text-white text-opacity-50;
 }
 
 .list>li {
@@ -32,6 +32,29 @@
     content: "\25CF";
 }
 
+.footerContainer {
+    @apply text-center relative mt-96;
+}
+
+.footer {
+    @apply relative px-8;
+}
+
+.customUnderline {
+    @apply relative inline-block;
+}
+
+.customUnderline::before {
+    @apply absolute bg-current left-1 bottom-0;
+    content: "";
+    height: 3px;
+    width: 70%;
+}
+
+.linkContainer {
+    @apply grid grid-cols-3 gap-4 text-left font-bold;
+}
+
 @screen lg {
     /* Space for menu + 4 rem from both sides */
     .main {
@@ -43,5 +66,14 @@
     }
     .list>li {
         @apply mr-0;
+    }
+    .footerContainer {
+        @apply text-left;
+    }
+    .footer {
+        @apply px-16;
+    }
+    .linkContainer {
+        @apply w-1/2 grid-cols-2;
     }
 }
