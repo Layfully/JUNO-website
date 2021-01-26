@@ -16,7 +16,7 @@ export default function Home() {
         <Menu />
       </header>
       <main className={styles.main}>
-        <header className="text-center space-y-4">
+        <header id="Home" className="text-center space-y-4">
           <Text size="h1" custom="font-title">
             J/ψ <span className={styles.customUnderline}>U</span>nder Observation ...
           </Text>
