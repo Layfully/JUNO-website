@@ -1,7 +1,13 @@
 import '../styles/globals.css'
-// kick off the polyfill
+import { useEffect } from 'react'
+import smoothscroll from 'smoothscroll-polyfill';
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    if (typeof (window) != 'undefined') {
+      smoothscroll.polyfill();
+    }
+  }, [])
   return <Component {...pageProps} />
 }
 
