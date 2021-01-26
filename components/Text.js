@@ -14,7 +14,7 @@ const Text = (props) => {
     if (props.custom) {
         tagClasses += ' ' + props.custom
     }
-    if (typeof (props.hover) !== 'undefined') {
+    if (props.hover) {
         tagClasses += ' duration-300 ease-in'
         typeof (props.hover) === "string" ? tagClasses += ' ' + props.hover : tagClasses += ' transition-colors hover:text-opacity-100'
     }
