@@ -1,5 +1,13 @@
 .main {
-    @apply pt-10 mx-4;
+    @apply mx-4;
+}
+
+.titleContainer {
+    @apply text-center space-y-8 pt-10;
+}
+
+.particleContainer {
+    @apply grid grid-cols-3 gap-5 py-20 px-6;
 }
 
 .teaserContainer {
@@ -75,5 +83,17 @@
     }
     .linkContainer {
         @apply w-1/2 grid-cols-2;
+    }
+}
+
+@screen xl {
+    .particleContainer {
+        @apply px-28;
+    }
+}
+
+@screen 2xl {
+    .particleContainer {
+        @apply px-40;
     }
 }

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Menu from '../components/Menu/Menu'
 import Text from '../components/Text'
@@ -16,14 +17,28 @@ export default function Home() {
         <Menu />
       </header>
       <main className={styles.main}>
-        <header id="Home" className="text-center space-y-4">
-          <Text size="h1" custom="font-title">
-            J/ψ <span className={styles.customUnderline}>U</span>nder Observation ...
-          </Text>
-          <Text size="h2" color="orange">
-            Physics story explained easy
-          </Text>
-        </header>
+        <section id="Home">
+          <header className={styles.titleContainer}>
+            <Text size="h1" custom="font-title">
+              J/ψ <span className={styles.customUnderline}>U</span>nder Observation ...
+            </Text>
+            <Text size="body" color="orange">
+              The ultimate Particle Physics experience
+            </Text>
+          </header>
+          <div className={styles.particleContainer}>
+            <div>
+              <Image src="/d-meson.png" alt="d-meson" width={1354} height={1042} layout="responsive" />
+            </div>
+            <div>
+              <Image src="/keon.png" alt="keon" width={1354} height={1042} layout="responsive" />
+            </div>
+            <div>
+              <Image src="/keon.png" alt="keon" width={1354} height={1042} layout="responsive" />
+            </div>
+          </div>
+        </section>
+
         <section id="Story">
           <ul className={`${styles.list} ${styles.listStar} space-y-8`}>
             <li><Text>J/ψ UNder Observation (JUNO) is a visualization of the J/ψ particle discovery in virtual reality (VR). </Text></li>
