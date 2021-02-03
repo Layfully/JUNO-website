@@ -7,7 +7,7 @@
 }
 
 .particleContainer {
-    @apply grid grid-cols-3 gap-5 py-20 px-6;
+    @apply flex gap-8 py-20 px-6 items-center;
 }
 
 .teaserContainer {
@@ -63,6 +63,12 @@
     @apply grid grid-cols-3 gap-4 text-left font-bold;
 }
 
+@screen sm {
+    .particleContainer {
+        @apply gap-10;
+    }
+}
+
 @screen lg {
     /* Space for menu + 4 rem from both sides */
     .main {
@@ -84,16 +90,19 @@
     .linkContainer {
         @apply w-1/2 grid-cols-2;
     }
+    .particleContainer {
+        @apply gap-14;
+    }
 }
 
 @screen xl {
     .particleContainer {
-        @apply px-28;
+        @apply px-28 gap-20;
     }
 }
 
 @screen 2xl {
     .particleContainer {
-        @apply px-40;
+        @apply px-40 gap-24;
     }
 }

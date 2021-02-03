@@ -28,13 +28,13 @@ export default function Home() {
           </header>
           <div className={styles.particleContainer}>
             <div>
-              <Image src="/d-meson.png" alt="d-meson" width={1354} height={1042} layout="responsive" />
+              <Image src="/d-meson.png" alt="d-meson" width={1354} height={1042} layout="intrinsic" />
             </div>
             <div>
-              <Image src="/keon.png" alt="keon" width={1354} height={1042} layout="responsive" />
+              <Image src="/j-psi.png" alt="j/psi" width={537} height={1824} layout="intrinsic" />
             </div>
             <div>
-              <Image src="/keon.png" alt="keon" width={1354} height={1042} layout="responsive" />
+              <Image src="/keon.png" alt="keon" width={1354} height={1042} layout="intrinsic" />
             </div>
           </div>
         </section>
