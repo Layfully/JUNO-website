@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Menu from '../components/Menu/Menu'
 import Text from '../components/Text'
+import ContactForm from '../components/ContactForm/ContactForm'
 import { FooterBackground } from '../components/Svg'
 
 
@@ -43,6 +44,8 @@ Join J/ψ and its friends along in their virtual revolution and get to know the 
         <div className="text-3xl text-orange text-opacity-60">
           Visualization of Data-Acquisition at BNL
         </div>
+
+        <ContactForm subject="Hello JUNO Team!" />
       </main>
 
       <footer className={styles.footerContainer} id="About">
