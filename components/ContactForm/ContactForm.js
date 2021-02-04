@@ -7,9 +7,11 @@ const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"
 
 const validateForm = (errors) => {
     let valid = true;
-    Object.values(errors).forEach(
-        (error) => (error.active || !error.interacted) && (valid = false)
-    );
+    for (const error of Object.values(errors)) {
+        if (error.active || !error.interacted) {
+            valid = false
+        }
+    }
     return valid;
 }
 
