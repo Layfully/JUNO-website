@@ -16,7 +16,7 @@ export default function Home() {
         <Menu />
       </header>
       <main className={styles.main}>
-        <header id="Home" className="text-center space-y-4">
+        <header id="Home" className="text-center space-y-4 lg:min-h-screen">
           <Text size="h1" custom="font-title">
             J/ψ <span className={styles.customUnderline}>U</span>nder Observation ...
           </Text>
@@ -24,7 +24,7 @@ export default function Home() {
             Physics story explained easy
           </Text>
         </header>
-        <section id="Story">
+        <section id="Story" className="lg:min-h-screen">
           <ul className={`${styles.list} ${styles.listStar} space-y-8`}>
             <li><Text>J/ψ UNder Observation (JUNO) is a visualization of the J/ψ particle discovery in virtual reality (VR). </Text></li>
             <li><Text>The JUNO adventure introduces you to the exciting world of particle physics and can be enjoyed using the Google Cardboard coupled with any smartphone. It intends to give insight into the groundbreaking physics experiments involved in the J/ψ discovery in 1974 and highlights their different approaches.
@@ -34,7 +34,7 @@ Join J/ψ and its friends along in their virtual revolution and get to know the 
           </ul>
         </section>
 
-        <section id="Teaser">
+        <section id="Teaser" className="lg:min-h-screen">
           <div className={styles.teaserContainer}>
             <iframe className={styles.teaser} src="https://www.youtube-nocookie.com/embed/wjs4eJPYDzQ" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
           </div>

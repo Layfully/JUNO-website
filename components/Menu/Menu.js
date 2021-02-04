@@ -11,6 +11,7 @@ class Menu extends React.Component {
         this.state = {
             isOpen: false,
             activeSection: 0,
+            isScrollingAfterClick: false,
             sections: [
                 {
                     title: "Home",
@@ -82,9 +83,14 @@ class Menu extends React.Component {
         }
     }
 
+    setScrolling = (newValue) => {
+        this.setState({ isScrollingAfterClick: newValue })
+    }
+
     scrollToElement = (section) => {
         const element = document.getElementById(section.href.substring(2))
         element.scrollIntoView({ behavior: 'smooth' })
+        this.setScrolling(true);
     }
 
 
@@ -102,7 +108,13 @@ class Menu extends React.Component {
                         {
                             this.state.sections.map((section, index) =>
                                 <li key={section.title}>
-                                    <SectionLink isActive={index === this.state.activeSection} section={section} onClick={() => { this.changeActiveSection(index); this.scrollToElement(section) }} />
+                                    <SectionLink
+                                        isScrolling={this.state.isScrollingAfterClick}
+                                        isActive={index === this.state.activeSection} section={section}
+                                        triggerActive={() => this.changeActiveSection(index)}
+                                        onClick={() => { this.changeActiveSection(index); this.scrollToElement(section) }}
+                                        resetScrolling={() => this.setScrolling(false)}
+                                    />
                                 </li>)
                         }
                     </ul>
