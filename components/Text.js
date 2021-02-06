@@ -3,13 +3,15 @@ import classNames from 'classnames'
 
 const Text = (props) => {
     let tagClasses = classNames({
+        'text-sm': props.size === 'sm',
         'text-base': props.size === 'body-sm',
         'text-2xl': props.size === 'body',
         'text-4xl': props.size === 'h2',
         'text-6xl': props.size === 'h1',
         'text-orange text-opacity-60': props.color === 'orange',
         'text-white text-opacity-50': props.color === 'white',
-
+        'text-orange': props.color === 'true-orange',
+        'text-orangeError': props.color === 'error'
     })
     if (props.custom) {
         tagClasses += ' ' + props.custom
