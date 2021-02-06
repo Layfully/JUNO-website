@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Menu from '../components/Menu/Menu'
 import Text from '../components/Text'
+import HomeSection from '../components/HomeSection/HomeSection'
 import ContactForm from '../components/ContactForm/ContactForm'
 import { FooterBackground } from '../components/Svg'
 
@@ -17,14 +18,7 @@ export default function Home() {
         <Menu />
       </header>
       <main className={styles.main}>
-        <header id="Home" className="text-center space-y-4">
-          <Text size="h1" custom="font-title">
-            J/ψ <span className={styles.customUnderline}>U</span>nder Observation ...
-          </Text>
-          <Text size="h2" color="orange">
-            Physics story explained easy
-          </Text>
-        </header>
+        <HomeSection />
         <section id="Story">
           <ul className={`${styles.list} ${styles.listStar} space-y-8`}>
             <li><Text>J/ψ UNder Observation (JUNO) is a visualization of the J/ψ particle discovery in virtual reality (VR). </Text></li>
