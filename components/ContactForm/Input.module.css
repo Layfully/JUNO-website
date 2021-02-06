@@ -1,0 +1,23 @@
+.input {
+    @apply w-full text-white bg-customDarkGray rounded-xl border-none resize-none mb-2;
+}
+
+.input:focus {
+    @apply ring-black;
+}
+
+.submit {
+    @apply self-end bg-customDarkGray rounded-xl text-orange border-orange font-bold py-2 px-8 border-2 transition-all duration-300;
+}
+
+.submit:hover {
+    @apply bg-customGray border-white text-white border-opacity-50 text-opacity-50;
+}
+
+.submit:active {
+    @apply bg-customDarkGray;
+}
+
+.submit:disabled {
+    @apply bg-customDarkGray border-white text-white border-opacity-50 text-opacity-50;
+}

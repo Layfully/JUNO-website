@@ -9,7 +9,13 @@ module.exports = {
         sans: ['Lekton', ...defaultTheme.fontFamily.sans]
       },
       colors: {
-        orange: '#ff7900'
+        orange: '#ff7900',
+        orangeError: '#D32C07',
+        customGray: '#231F1F',
+        customDarkGray: '#171616'
+      },
+      borderRadius: {
+        'large': '5rem'
       }
     },
     fontFamily: {
@@ -17,7 +23,11 @@ module.exports = {
     }
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['active'],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
