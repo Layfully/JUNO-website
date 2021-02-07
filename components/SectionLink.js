@@ -10,7 +10,7 @@ class SectionLink extends React.Component {
 
     componentDidMount() {
         const element = document.getElementById(this.props.section.href.substring(2))
-        const observer = new IntersectionObserver(this.trackScrolling, { threshold: .7 });
+        const observer = new IntersectionObserver(this.trackScrolling, { threshold: .5 });
 
         if (element != null) {
             observer.observe(element)
@@ -18,16 +18,16 @@ class SectionLink extends React.Component {
     }
 
     trackScrolling = (entries) => {
-        entries.forEach((entry) => {
-            if (entry.intersectionRatio > .7) {
-                if (!this.props.isScrolling) {
+        if(!this.props.isActive && !this.props.isScrolling){
+            entries.forEach((entry) => {
+                if (entry.intersectionRatio > .5) {
                     this.props.triggerActive()
                 }
-                else if (this.props.isActive) {
-                    this.props.resetScrolling()
-                }
-            }
-        })
+            })
+        }
+        else {
+            this.props.resetScrolling()
+        }
     }
 
     render() {
