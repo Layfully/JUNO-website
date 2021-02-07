@@ -30,6 +30,10 @@ class Menu extends React.Component {
                     href: "/#Progress"
                 },
                 {
+                    title: "Contact us",
+                    href: "/#Contact"
+                },
+                {
                     title: "About",
                     href: "/#About"
                 }

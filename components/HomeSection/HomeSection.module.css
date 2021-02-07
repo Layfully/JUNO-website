@@ -1,0 +1,31 @@
+.titleContainer {
+    @apply text-center space-y-8 pt-10;
+}
+
+.particleContainer {
+    @apply flex gap-8 py-20 px-6 items-center;
+}
+
+@screen sm {
+    .particleContainer {
+        @apply gap-10;
+    }
+}
+
+@screen lg {
+    .particleContainer {
+        @apply gap-14;
+    }
+}
+
+@screen xl {
+    .particleContainer {
+        @apply px-28 gap-20;
+    }
+}
+
+@screen 2xl {
+    .particleContainer {
+        @apply px-40 gap-24;
+    }
+}
