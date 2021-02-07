@@ -9,7 +9,7 @@ class SectionLink extends React.Component {
     }
 
     componentDidMount() {
-        const element = document.getElementById(this.props.section.title)
+        const element = document.getElementById(this.props.section.href.substring(2))
         const observer = new IntersectionObserver(this.trackScrolling, { threshold: .7 });
 
         if (element != null) {
