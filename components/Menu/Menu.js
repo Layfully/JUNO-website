@@ -94,7 +94,10 @@ class Menu extends React.Component {
     scrollToElement = (section) => {
         const element = document.getElementById(section.href.substring(2))
         element.scrollIntoView({ behavior: 'smooth' })
-        this.setScrolling(true);
+        
+        if(this.state.sections[this.state.activeSection].href !== section.href){
+            this.setScrolling(true)
+        }
     }
 
 
