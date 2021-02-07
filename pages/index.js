@@ -18,7 +18,7 @@ export default function Home() {
       </header>
       <main className={styles.main}>
         <HomeSection />
-        <section id='Story'>
+        <section id="Story">
           <ul className={`${styles.list} ${styles.listStar} space-y-8`}>
             <li>
               <Text>
