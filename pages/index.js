@@ -57,9 +57,11 @@ export default function Home() {
           </div>
         </section>
 
-        <div className='text-3xl text-orange text-opacity-60'>
-          Visualization of Data-Acquisition at BNL
-        </div>
+        <section id='Progress' className='lg:min-h-screen'>
+          <div className='text-3xl text-orange text-opacity-60'>
+            Visualization of Data-Acquisition at BNL
+          </div>
+        </section> 
 
         <ContactForm subject='Hello JUNO Team!' />
       </main>
