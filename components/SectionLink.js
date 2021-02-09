@@ -25,7 +25,7 @@ class SectionLink extends React.Component {
                 }
             })
         }
-        else {
+        else if(this.props.isActive) {
             this.props.resetScrolling()
         }
     }
