@@ -95,23 +95,25 @@ class Slider extends React.Component {
               <div className=' bg-black relative h-160'>
                 <img src={description.image} className={styles.image}></img>
                 <div className={styles.overlay}>
-                  <Text size='h2' custom='text-opacity-90'>
-                    {description.name}
-                  </Text>
-                  <p className='text-3xl font-bold'></p>
-                  <Text size='body' custom='text-opacity-90'>
-                    {description.university}
-                  </Text>
-                  <p className='font-bold text-sm uppercase'></p>
-                  <Text size='sm' custom='text-opacity-90'>
-                    Tasks: {description.tasks}
-                  </Text>
-                  <Text size='sm' custom='text-opacity-90'>
-                    Interests: {description.interests}
-                  </Text>
-                  <Text size='base' custom='text-opacity-90'>
-                    How I joined the project: {description.joined}
-                  </Text>
+                  <div className={styles.overlayTextWrapper}>
+                    <Text size='h2' custom='text-opacity-90'>
+                      {description.name}
+                    </Text>
+                    <p className='text-3xl font-bold'></p>
+                    <Text size='body' custom='text-opacity-90'>
+                      {description.university}
+                    </Text>
+                    <p className='font-bold text-sm uppercase'></p>
+                    <Text size='sm' custom='text-opacity-90'>
+                      Tasks: {description.tasks}
+                    </Text>
+                    <Text size='sm' custom='text-opacity-90'>
+                      Interests: {description.interests}
+                    </Text>
+                    <Text size='base' custom='text-opacity-90'>
+                      How I joined the project: {description.joined}
+                    </Text>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

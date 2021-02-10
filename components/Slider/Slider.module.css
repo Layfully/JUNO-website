@@ -1,12 +1,16 @@
 .overlay {
-    @apply max-w-160 absolute top-0 right-0 left-0 bottom-0 flex flex-col mx-auto p-10 justify-center transition-opacity duration-500 bg-black bg-opacity-60 opacity-0 ;
+    @apply max-w-160 absolute top-0 right-0 left-0 bottom-0 flex flex-col mx-auto  justify-center  bg-black bg-opacity-20 ;
 }
 
 .image {
     @apply w-full h-full object-contain;
 }
 
-.overlay:hover {
+.overlayTextWrapper {
+    @apply bg-black rounded m-5 mb-10 p-5 bg-opacity-40 opacity-0 transition-opacity duration-500;
+}
+
+.overlayTextWrapper:hover {
     @apply opacity-100;
 }
 
@@ -29,5 +33,8 @@
 @screen sm {
     .overlay {
         @apply justify-end;
+    }
+    .overlayTextWrapper {
+        @apply opacity-100;
     }
 }
