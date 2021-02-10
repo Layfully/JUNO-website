@@ -4,3 +4,19 @@
 html {
     scroll-behavior: smooth;
 }
+
+.swiper-button-next, .swiper-button-prev{
+    @apply text-orange opacity-50 transition-opacity duration-500;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover{
+    @apply opacity-100;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-orange opacity-50;
+}
+
+.swiper-pagination-bullet-active {
+    @apply opacity-100;
+}

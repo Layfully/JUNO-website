@@ -8,6 +8,8 @@ import TeaserSection from "../components/TeaserSection/TeaserSection";
 import ProgressSection from "../components/ProgressSection/ProgressSection";
 import ContactForm from "../components/ContactForm/ContactForm";
 import { FooterBackground } from "../components/Svg";
+import Slider from "../components/Slider/Slider";
+import sectionStyles from "./../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -22,10 +24,13 @@ export default function Home() {
 
       <main className={styles.main}>
         <HomeSection />
-        <StorySection/>
+        <StorySection />
         <TeaserSection />
         <ProgressSection />
         <ContactForm subject='Hello JUNO Team!' />
+        <section id='slider' className={sectionStyles.section}>
+          <Slider />
+        </section>
       </main>
 
       <footer className={styles.footerContainer} id='About'>

@@ -1,0 +1,17 @@
+.overlay {
+    @apply max-w-160 absolute top-0 right-0 left-0 bottom-0 flex flex-col mx-auto p-10 justify-center transition-opacity duration-500 bg-black bg-opacity-60 opacity-0 ;
+}
+
+.image {
+    @apply w-full h-full object-contain;
+}
+
+.overlay:hover {
+    @apply opacity-100;
+}
+
+@screen sm {
+    .overlay {
+        @apply justify-end;
+    }
+}
