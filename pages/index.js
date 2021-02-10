@@ -3,6 +3,9 @@ import styles from "../styles/Home.module.css";
 import Menu from "../components/Menu/Menu";
 import Text from "../components/Text";
 import HomeSection from "../components/HomeSection/HomeSection";
+import StorySection from "../components/StorySection/StorySection";
+import TeaserSection from "../components/TeaserSection/TeaserSection";
+import ProgressSection from "../components/ProgressSection/ProgressSection";
 import ContactForm from "../components/ContactForm/ContactForm";
 import { FooterBackground } from "../components/Svg";
 
@@ -16,53 +19,12 @@ export default function Home() {
       <header>
         <Menu />
       </header>
+
       <main className={styles.main}>
         <HomeSection />
-        <section id="Story">
-          <ul className={`${styles.list} ${styles.listStar} space-y-8`}>
-            <li>
-              <Text>
-                J/ψ UNder Observation (JUNO) is a visualization of the J/ψ
-                particle discovery in virtual reality (VR).{" "}
-              </Text>
-            </li>
-            <li>
-              <Text>
-                The JUNO adventure introduces you to the exciting world of
-                particle physics and can be enjoyed using the Google Cardboard
-                coupled with any smartphone. It intends to give insight into the
-                groundbreaking physics experiments involved in the J/ψ discovery
-                in 1974 and highlights their different approaches.
-              </Text>
-            </li>
-            <li>
-              <Text>
-                In a second story line, you can experiencet the subatomic
-                particles being protagonists themselves, as they question the
-                social order of their world. Join J/ψ and its friends along in
-                their virtual revolution and get to know the tiny particles that
-                build the matter surrounding us!
-              </Text>
-            </li>
-          </ul>
-        </section>
-
-        <section id='Teaser' className='lg:min-h-screen'>
-          <div className={styles.teaserContainer}>
-            <iframe
-              className={styles.teaser}
-              src='https://www.youtube-nocookie.com/embed/wjs4eJPYDzQ'
-              frameBorder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>
-          </div>
-        </section>
-
-        <section id='Progress' className='lg:min-h-screen'>
-          <div className='text-3xl text-orange text-opacity-60'>
-            Visualization of Data-Acquisition at BNL
-          </div>
-        </section> 
-
+        <StorySection/>
+        <TeaserSection />
+        <ProgressSection />
         <ContactForm subject='Hello JUNO Team!' />
       </main>
 

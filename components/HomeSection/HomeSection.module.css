@@ -1,5 +1,5 @@
 .titleContainer {
-    @apply text-center space-y-8 pt-10;
+    @apply text-center space-y-8;
 }
 
 .particleContainer {
@@ -15,6 +15,9 @@
 @screen lg {
     .particleContainer {
         @apply gap-14;
+    }
+    .titleContainer {
+        @apply pt-10;
     }
 }
 

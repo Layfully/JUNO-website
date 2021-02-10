@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Text from '../Text'
 import React from 'react'
 import styles from './HomeSection.module.css'
+import sectionStyles from '../../styles/Home.module.css'
 
 
 class HomeSection extends React.Component {
@@ -34,7 +35,7 @@ class HomeSection extends React.Component {
 
     render() {
         return (
-            <section id="Home">
+            <section id="Home" className={`${sectionStyles.section} flex-col`}>
                 <header className={styles.titleContainer}>
                     <Text size="h1" custom="font-title">J/ψ <span className={styles.customUnderline}>U</span>nder Observation ...</Text>
                     <Text size="body" color="orange">The ultimate Particle Physics experience</Text>

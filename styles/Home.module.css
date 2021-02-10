@@ -3,8 +3,12 @@
 }
 
 .teaserContainer {
-    @apply relative;
+    @apply relative flex-1;
     padding-top: 56.25%;
+}
+
+.section {
+    @apply flex items-center justify-center min-h-screen;
 }
 
 .teaser {
@@ -62,7 +66,7 @@
     }
     /* Height screen - 8 rem, (4 for both sides)*/
     .teaser {
-        max-height: calc(100vh - theme('spacing.32'))
+        max-height: calc(100vh - theme('spacing.32'));
     }
     .list>li {
         @apply mr-0;

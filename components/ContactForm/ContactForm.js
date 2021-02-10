@@ -71,7 +71,7 @@ class ContactForm extends React.Component {
     render() {
         const isValid = validateForm(this.state.errors)
         return (
-            <section id="Contact" className="bg-customGray w-full md:w-3/5 xl:w-1/2 rounded-large mx-auto">
+            <section id="Contact" className="bg-customGray w-full md:w-3/5 xl:w-1/2 rounded-3xl md:rounded-large mx-auto">
                 <Text size="h2" color="true-orange" custom="font-bold text-center py-10">Contact us</Text>
                 <form action="https://formspree.io/f/mpzobgvw" method="POST" className="flex flex-col items-center space-y-6" noValidate>
                     <Input name="name" type="text" label="Your name" error={this.state.errors.name} onChange={this.handleChange} />
