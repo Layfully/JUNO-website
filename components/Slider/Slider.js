@@ -65,6 +65,15 @@ class Slider extends React.Component {
     };
   }
 
+  componentDidMount() {
+    document
+      .getElementsByClassName("swiper-button-next")[0]
+      .classList.add(styles.customSwiperNextButton);
+    document
+      .getElementsByClassName("swiper-button-prev")[0]
+      .classList.add(styles.customSwiperNextButton);
+  }
+
   render() {
     return (
       <>
@@ -75,8 +84,12 @@ class Slider extends React.Component {
           effect='fade'
           loop={true}
           keyboard={true}
-          pagination={{ clickable: true }}
-          navigation>
+          navigation
+          pagination={{
+            clickable: true,
+            bulletClass: `swiper-pagination-bullet ${styles.customBullet}`,
+            bulletActiveClass: `swiper-pagination-bullet-active ${styles.customActiveBullet}`,
+          }}>
           {this.state.descriptions.map((description, index) => (
             <SwiperSlide key={index}>
               <div className=' bg-black relative h-160'>
