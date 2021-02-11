@@ -1,0 +1,33 @@
+.overlay {
+    @apply max-w-160 absolute top-0 right-0 left-0 bottom-0 flex flex-col mx-auto  justify-end ;
+}
+
+.image {
+    @apply w-full h-full object-contain;
+}
+
+.overlayTextWrapper {
+    @apply bg-black rounded m-10 mb-8 p-5 bg-opacity-40 transition-opacity duration-500;
+}
+
+.customSwiperNextButton{
+    @apply text-orange opacity-50 transition-opacity duration-500  text-lg;
+}
+
+.customSwiperNextButton:hover{
+    @apply opacity-100;
+}
+
+.customBullet {
+    @apply bg-orange opacity-50;
+}
+
+.customActiveBullet {
+    @apply opacity-100;
+}
+
+@screen sm {
+    .overlayTextWrapper {
+        @apply m-5 mb-10;
+    }
+}

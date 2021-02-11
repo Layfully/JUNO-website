@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   purge: [],
@@ -6,28 +6,38 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Lekton', ...defaultTheme.fontFamily.sans]
+        sans: ["Lekton", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        orange: '#ff7900',
-        orangeError: '#D32C07',
-        customGray: '#231F1F',
-        customDarkGray: '#171616'
+        orange: "#ff7900",
+        orangeError: "#D32C07",
+        customGray: "#231F1F",
+        customDarkGray: "#171616",
       },
       borderRadius: {
-        'large': '5rem'
-      }
+        large: "5rem",
+      },
+      spacing: {
+        120: "30rem",
+        160: "40rem",
+      },
+
+      padding: {
+        "1/4": "25%",
+      },
+
+      maxWidth: {
+        160: "40rem",
+      },
     },
     fontFamily: {
-      title: ['Alegreya SC', ...defaultTheme.fontFamily.sans]
-    }
+      title: ["Alegreya SC", ...defaultTheme.fontFamily.sans],
+    },
   },
   variants: {
     extend: {
-      backgroundColor: ['active'],
+      backgroundColor: ["active"],
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
-}
+  plugins: [require("@tailwindcss/forms")],
+};
