@@ -53,6 +53,15 @@ class Slider extends React.Component {
           joined:
             "Sarah and I thought it would be a great idea to start a VR-Project without any experience in 3D modelling. :)",
         },
+        {
+          image: "/adrian.jpg",
+          name: "Adrian",
+          university: "Pedagogical University of Cracow",
+          interests: "software development, math, guitar",
+          tasks: "animation, programming",
+          joined:
+            "Got a message from student representative and figured out it will be a good way of learning something new.",
+        },
       ],
     };
   }
