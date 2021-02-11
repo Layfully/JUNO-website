@@ -20,19 +20,15 @@ class Slider extends React.Component {
       descriptions: [
         {
           image: "/robert.jpg",
-          width: 1300,
-          height: 1300,
           name: "Robert",
           university: "Pedagogical University of Cracow",
           interests: "game development, music",
           tasks: "3D modelling, social media",
           joined:
-            "I got an e-mail from Łukasz about the project, and told to myself \"Why not? It doesn't matter that I don't know much about physics, right? Right???\"",
+            "I got an e-mail from Łukasz about the project, and told to myself Why not? It doesn't matter that I don't know much about physics, right? Right???",
         },
         {
           image: "/kamil.png",
-          width: 1300,
-          height: 1300,
           name: "Kamil",
           university: "Pedagogical University of Cracow",
           interests: "Computer science, games",
@@ -42,8 +38,6 @@ class Slider extends React.Component {
         },
         {
           image: "/sarah.jpg",
-          width: 1300,
-          height: 1300,
           name: "Sarah",
           university: "University of Bonn",
           interests: "particle physics and science communication",
@@ -52,8 +46,6 @@ class Slider extends React.Component {
         },
         {
           image: "/naomi.jpg",
-          width: 1300,
-          height: 1300,
           name: "Naomi",
           university: "University of Bonn",
           interests: "particle physics, public outreach",
@@ -92,26 +84,25 @@ class Slider extends React.Component {
           }}>
           {this.state.descriptions.map((description, index) => (
             <SwiperSlide key={index}>
-              <div className=' bg-black relative h-160'>
+              <div className=' bg-black relative h-120 sm:h-160'>
                 <img src={description.image} className={styles.image}></img>
                 <div className={styles.overlay}>
                   <div className={styles.overlayTextWrapper}>
-                    <Text size='h2' custom='text-opacity-90'>
-                      {description.name}
-                    </Text>
-                    <p className='text-3xl font-bold'></p>
-                    <Text size='body' custom='text-opacity-90'>
+                    <Text size='sm' custom='text-opacity-90 pb-3'>
                       {description.university}
                     </Text>
-                    <p className='font-bold text-sm uppercase'></p>
-                    <Text size='sm' custom='text-opacity-90'>
+                    <Text size='h2' custom='text-opacity-90 pb-3'>
+                      {description.name}
+                    </Text>
+                    <Text size='sm' custom='text-opacity-90 font-bold mb-2'>
                       Tasks: {description.tasks}
                     </Text>
-                    <Text size='sm' custom='text-opacity-90'>
+                    <Text size='sm' custom='text-opacity-90 font-bold mb-2'>
                       Interests: {description.interests}
                     </Text>
-                    <Text size='base' custom='text-opacity-90'>
-                      How I joined the project: {description.joined}
+                    <Text size='base' custom='text-opacity-90 font-bold'>
+                      How I joined the project:{" "}
+                      <q className='italic'>{description.joined}</q>
                     </Text>
                   </div>
                 </div>
