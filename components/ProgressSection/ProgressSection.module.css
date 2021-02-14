@@ -1,0 +1,44 @@
+.progressBar {
+    @apply mt-20;
+}
+
+.elementWrapper {
+    @apply relative border-l-8 border-customGray;
+}
+
+.elementWrapperActive {
+    @apply border-orange;
+}
+
+.elementWrapperActive > .element::before {
+    @apply bg-orange;
+}
+
+.elementWrapper:last-of-type {
+    @apply border-transparent;
+}
+
+.element {
+    @apply relative pl-10 pb-10 -top-20;
+}
+
+.elementBox {
+    @apply bg-customGray rounded-3xl p-10 w-96;
+}
+
+.elementBox::after {
+    content: '';
+    border-right: solid 16px rgb(35, 31, 31);
+    border-bottom: solid 16px transparent;  
+    border-top: solid 16px transparent;
+    transform: translate3d(-100%, -12px, 0);
+    @apply absolute top-1/2 left-0;
+
+}
+
+.element::before {
+    content: "";
+    transform: translateY(-100%);
+    @apply bg-customGray w-8 h-8 absolute rounded-full top-1/2 ring-5 ring-inset ring-orange -left-5;
+}
+
