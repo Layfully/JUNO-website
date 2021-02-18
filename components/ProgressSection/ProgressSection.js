@@ -34,7 +34,8 @@ class ProgressSection extends React.Component {
             <div
               className={`${styles.elementWrapper} ${
                 index <= this.props.step ? styles.elementWrapperActive : ""
-              }`}>
+              }`}
+              key={index}>
               <li className={styles.element}>
                 <Fade bottom>
                   <div className={styles.elementBox}>
