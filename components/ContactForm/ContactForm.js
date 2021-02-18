@@ -2,6 +2,7 @@ import Input from "./Input";
 import Submit from "./Submit";
 import Text from "../Text";
 import React from "react";
+import sectionStyles from "../../styles/Home.module.css";
 
 const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -72,45 +73,45 @@ class ContactForm extends React.Component {
   render() {
     const isValid = validateForm(this.state.errors);
     return (
-      <section
-        id='Contact'
-        className='bg-customGray w-full md:w-3/5 xl:w-1/2 rounded-3xl md:rounded-large mx-auto'>
-        <Text
-          size='h2'
-          color='true-orange'
-          custom='font-bold text-center py-10'>
-          Contact us
-        </Text>
-        <form
-          action='https://formspree.io/f/mpzobgvw'
-          method='POST'
-          className='flex flex-col items-center space-y-6'
-          noValidate>
-          <Input
-            name='name'
-            type='text'
-            label='Your name'
-            error={this.state.errors.name}
-            onChange={this.handleChange}
-          />
-          <Input
-            name='email'
-            type='email'
-            label='Email'
-            error={this.state.errors.email}
-            onChange={this.handleChange}
-          />
-          <Input
-            name='message'
-            type='textarea'
-            label='Tell us something about you...'
-            error={this.state.errors.message}
-            onChange={this.handleChange}
-          />
-          <input type='hidden' name='_subject' value={this.props.subject} />
-          <input type='text' name='_gotcha' className='hidden' />
-          <Submit value='Send' disabled={!isValid} />
-        </form>
+      <section id='Contact' className={sectionStyles.section}>
+        <div className='bg-customGray w-full md:w-3/5 xl:w-1/2 rounded-3xl md:rounded-large mx-auto'>
+          <Text
+            size='h2'
+            color='true-orange'
+            custom='font-bold text-center pt-10 pb-6'>
+            Contact us
+          </Text>
+          <form
+            action='https://formspree.io/f/mpzobgvw'
+            method='POST'
+            className='flex flex-col items-center space-y-4'
+            noValidate>
+            <Input
+              name='name'
+              type='text'
+              label='Your name'
+              error={this.state.errors.name}
+              onChange={this.handleChange}
+            />
+            <Input
+              name='email'
+              type='email'
+              label='Email'
+              error={this.state.errors.email}
+              onChange={this.handleChange}
+            />
+            <Input
+              name='message'
+              type='textarea'
+              label='Tell us something about you...'
+              error={this.state.errors.message}
+              onChange={this.handleChange}
+            />
+            <input type='hidden' name='_subject' value={this.props.subject} />
+            <input type='text' name='_gotcha' className='hidden' />
+            <Submit value='Send' disabled={!isValid} />
+          </form>
+        </div>
       </section>
     );
   }
