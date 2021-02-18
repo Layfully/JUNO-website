@@ -34,7 +34,8 @@ class Menu extends React.Component {
           href: "/#Contact",
         },
         {
-          title: "Our Team",
+
+          title: "Our team",
           href: "/#OurTeam",
         },
         {
