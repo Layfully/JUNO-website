@@ -23,7 +23,7 @@
 }
 
 .elementBox {
-    @apply bg-customGray rounded-3xl p-10 w-96;
+    @apply bg-customGray rounded-3xl p-10 w-96 relative;
 }
 
 .elementBox::after {
