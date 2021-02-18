@@ -3,6 +3,7 @@ import Text from "../Text";
 import React from "react";
 import styles from "./HomeSection.module.css";
 import sectionStyles from "../../styles/Home.module.css";
+import TypeIt from "typeit-react";
 
 class HomeSection extends React.Component {
   constructor(props) {
@@ -37,11 +38,32 @@ class HomeSection extends React.Component {
       <section id='Home' className={`${sectionStyles.section} flex-col`}>
         <header className={styles.titleContainer}>
           <Text size='h1' custom='font-title'>
-            J/ψ <span className={styles.customUnderline}>U</span>nder
-            Observation ...
+            <span className=' tracking-wider'>
+              J/<span style={{ fontSize: "4.875rem" }}>ψ</span>
+            </span>{" "}
+            <span className={styles.customUnderline}>U</span>nder Observation
+            ...
           </Text>
           <Text size='body' color='orange'>
-            The ultimate Particle Physics experience
+            <TypeIt
+              options={{
+                speed: 100,
+                cursorSpeed: 600,
+                lifeLike: true,
+                waitUntilVisible: true,
+                cursorChar:
+                  "<div class='bg-white absolute opacity-80' style='width:8px; top:10px; bottom:10px; right:-10px;'></div>",
+              }}
+              getBeforeInit={(instance) => {
+                instance
+                  .type("The ultimate Particle Pyhs")
+                  .pause(45)
+                  .delete(3)
+                  .type("hysics experience.")
+                  .move(12);
+
+                return instance;
+              }}></TypeIt>
           </Text>
         </header>
         <div className={styles.particleContainer}>
