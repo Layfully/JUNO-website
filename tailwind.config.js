@@ -21,13 +21,14 @@ module.exports = {
         120: "30rem",
         160: "40rem",
       },
-
       padding: {
         "1/4": "25%",
       },
-
       maxWidth: {
         160: "40rem",
+      },
+      ringWidth: {
+        5: "5px",
       },
     },
     fontFamily: {
