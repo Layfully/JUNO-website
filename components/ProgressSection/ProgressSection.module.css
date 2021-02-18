@@ -1,5 +1,5 @@
 .progressBar {
-    @apply mt-20;
+    @apply mt-20 mx-4;
 }
 
 .elementWrapper {
@@ -23,7 +23,7 @@
 }
 
 .elementBox {
-    @apply bg-customGray rounded-3xl p-10 w-96 relative;
+    @apply bg-customGray rounded-3xl py-8 px-4 relative;
 }
 
 .elementBox::after {
@@ -40,5 +40,15 @@
     content: "";
     transform: translateY(-100%);
     @apply bg-customGray w-8 h-8 absolute rounded-full top-1/2 ring-5 ring-inset ring-orange -left-5;
+}
+
+@screen md {
+    .elementBox {
+        @apply w-96 p-10;
+    }
+
+    .progressBar {
+        @apply mx-0;
+    }
 }
 
