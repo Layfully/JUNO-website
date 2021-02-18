@@ -79,6 +79,7 @@ class Slider extends React.Component {
       <>
         <Swiper
           slidesPerView={1}
+          loopedSlides={3}
           autoplay={{ delay: 10000, disableOnInteraction: false }}
           effect='coverflow'
           loop={true}
