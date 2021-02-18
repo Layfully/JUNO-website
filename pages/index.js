@@ -26,7 +26,7 @@ export default function Home() {
         <HomeSection />
         <StorySection />
         <TeaserSection />
-        <ProgressSection />
+        <ProgressSection step={1} />
         <ContactForm subject='Hello JUNO Team!' />
         <section id='OurTeam' className={sectionStyles.section}>
           <Slider />
