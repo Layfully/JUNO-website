@@ -3,14 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   Autoplay,
   Navigation,
-  Pagination,
-  EffectFade,
+  EffectCoverflow,
   Keyboard,
 } from "swiper";
 import Text from "../Text";
 import styles from "./Slider.module.css";
 
-SwiperCore.use([Autoplay, Navigation, Pagination, EffectFade, Keyboard]);
+SwiperCore.use([Autoplay, Navigation, EffectCoverflow, Keyboard]);
 
 class Slider extends React.Component {
   constructor(props) {
@@ -79,41 +78,51 @@ class Slider extends React.Component {
     return (
       <>
         <Swiper
-          spaceBetween={200}
           slidesPerView={1}
+          loopedSlides={3}
           autoplay={{ delay: 10000, disableOnInteraction: false }}
-          effect='fade'
+          effect='coverflow'
           loop={true}
           keyboard={true}
-          navigation
-          pagination={{
-            clickable: true,
-            bulletClass: `swiper-pagination-bullet ${styles.customBullet}`,
-            bulletActiveClass: `swiper-pagination-bullet-active ${styles.customActiveBullet}`,
+          navigation={true}
+          autoHeight={true}
+          centeredSlides={true}
+          coverflowEffect={{
+            rotate: 40,
+            stretch: 0,
+            depth: 300,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2.38,
+            },
+            1280: {
+              slidesPerView: 3,
+            },
           }}>
           {this.state.descriptions.map((description, index) => (
             <SwiperSlide key={index}>
-              <div className=' bg-black relative h-120 sm:h-160'>
+              <div className=' bg-black relative flex flex-col justify-center'>
                 <img src={description.image} className={styles.image}></img>
-                <div className={styles.overlay}>
-                  <div className={styles.overlayTextWrapper}>
-                    <Text size='sm' custom='text-opacity-90 pb-3'>
-                      {description.university}
-                    </Text>
-                    <Text size='h2' custom='text-opacity-90 pb-3'>
-                      {description.name}
-                    </Text>
-                    <Text size='sm' custom='text-opacity-90 font-bold mb-2'>
-                      Tasks: {description.tasks}
-                    </Text>
-                    <Text size='sm' custom='text-opacity-90 font-bold mb-2'>
-                      Interests: {description.interests}
-                    </Text>
-                    <Text size='base' custom='text-opacity-90 font-bold'>
-                      How I joined the project:{" "}
-                      <q className='italic'>{description.joined}</q>
-                    </Text>
-                  </div>
+                <div className='p-4 bg-customGray'>
+                  <Text size='sm' custom='text-opacity-90 pb-3'>
+                    {description.university}
+                  </Text>
+                  <Text size='h2' custom='text-opacity-90 pb-3'>
+                    {description.name}
+                  </Text>
+                  <Text size='sm' custom='text-opacity-90 font-bold mb-2'>
+                    Tasks: {description.tasks}
+                  </Text>
+                  <Text size='sm' custom='text-opacity-90 font-bold mb-2'>
+                    Interests: {description.interests}
+                  </Text>
+                  <Text size='base' custom='text-opacity-90 font-bold'>
+                    How I joined the project:{" "}
+                    <q className='italic'>{description.joined}</q>
+                  </Text>
                 </div>
               </div>
             </SwiperSlide>
