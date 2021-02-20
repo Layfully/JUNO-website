@@ -30,7 +30,6 @@ export default function Home() {
         <header>
           <Menu />
         </header>
-
         <main className={styles.main}>
           <HomeSection />
           <StorySection />
