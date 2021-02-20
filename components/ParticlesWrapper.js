@@ -22,6 +22,7 @@ class ParticlesWrapper extends React.Component {
     }
   };
 
+
   render() {
     return (
       <Particles
