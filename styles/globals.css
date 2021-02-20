@@ -6,6 +6,10 @@ html {
 }
 .ti-cursor {
     position: relative;
+    display: inline !important;
+    color: inherit !important;
+    line-height: inherit !important;
+    font:inherit !important;
 }
 
 .-z-1{

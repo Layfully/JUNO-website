@@ -51,6 +51,7 @@ class HomeSection extends React.Component {
             className='text-orange text-2xl'
             options={{
               speed: 100,
+              startDelay: 0,
               cursorSpeed: 600,
               lifeLike: true,
               waitUntilVisible: true,
