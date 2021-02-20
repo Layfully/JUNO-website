@@ -6,6 +6,13 @@ const ParticlesWrapper = (props) => {
   return (
     <Particles
       canvasClassName='bg-black fixed pointer-events-none -z-1 top-0 left-0'
+      params={{
+        interactivity: {
+          events: {
+            resize: false,
+          },
+        },
+      }}
       width={useWindowSize(false).width}
       height={useWindowSize(false).height}
     />
