@@ -35,7 +35,11 @@ class Menu extends React.Component {
         },
         {
           title: "Our team",
-          href: "/#OurTeam",
+          href: "/#Ourteam",
+        },
+        {
+          title: "Affiliates",
+          href: "/#Affiliates",
         },
         {
           title: "About",

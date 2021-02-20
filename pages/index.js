@@ -6,14 +6,17 @@ import HomeSection from "../components/HomeSection/HomeSection";
 import StorySection from "../components/StorySection/StorySection";
 import TeaserSection from "../components/TeaserSection/TeaserSection";
 import ProgressSection from "../components/ProgressSection/ProgressSection";
+import AffiliatesSection from "../components/AffiliatesSection/AffiliatesSection";
 import ContactForm from "../components/ContactForm/ContactForm";
 import { FooterBackground } from "../components/Svg";
 import Slider from "../components/Slider/Slider";
 import sectionStyles from "./../styles/Home.module.css";
+import Particles from "react-particles-js";
 
 export default function Home() {
   return (
-    <div className='bg-black overflow-x-hidden'>
+    <div className='bg-transparent overflow-x-hidden'>
+      <Particles canvasClassName='bg-black fixed -z-1' />
       <Head>
         <title>Create Next App</title>
         <link rel='icon' href='/favicon.ico' />
@@ -28,9 +31,10 @@ export default function Home() {
         <TeaserSection />
         <ProgressSection step={1} />
         <ContactForm subject='Hello JUNO Team!' />
-        <section id='OurTeam' className={sectionStyles.section}>
+        <section id='Ourteam' className={sectionStyles.section}>
           <Slider />
         </section>
+        <AffiliatesSection />
       </main>
 
       <footer className={styles.footerContainer} id='About'>
