@@ -45,14 +45,18 @@ export default function Home() {
             <ul className={`${styles.list} ${styles.listBullet} text-left`}>
               <li>
                 <Text hover>
-                  <a href='https://home.cern/science/physics'>
+                  <a
+                    href='https://home.cern/science/physics'
+                    rel='nofollow noreferrer noopener'>
                     Particle Physics at CERN
                   </a>
                 </Text>
               </li>
               <li>
                 <Text hover>
-                  <a href='https://atlas.cern/discover/physics'>
+                  <a
+                    href='https://atlas.cern/discover/physics'
+                    rel='nofollow noreferrer noopener'>
                     Particle Physics at ALTAS
                   </a>
                 </Text>
@@ -71,28 +75,36 @@ export default function Home() {
             <ul className={`${styles.list} ${styles.listBullet} text-left`}>
               <li>
                 <Text hover>
-                  <a href='https://www6.slac.stanford.edu/about/slac-overview'>
+                  <a
+                    href='https://www6.slac.stanford.edu/about/slac-overview'
+                    rel='nofollow noreferrer noopener'>
                     SLAC - Stanford Linear Accelerator Center
                   </a>
                 </Text>
               </li>
               <li>
                 <Text hover>
-                  <a href='https://www6.slac.stanford.edu/about/slac-history'>
+                  <a
+                    href='https://www6.slac.stanford.edu/about/slac-history'
+                    rel='nofollow noreferrer noopener'>
                     History of SLAC
                   </a>
                 </Text>
               </li>
               <li>
                 <Text hover>
-                  <a href='https://www.bnl.gov/about/w'>
+                  <a
+                    href='https://www.bnl.gov/about/w'
+                    rel='nofollow noreferrer noopener'>
                     BNL - Brookhaven National Laboratory
                   </a>
                 </Text>
               </li>
               <li>
                 <Text hover>
-                  <a href='https://www.bnl.gov/about/history/discoveries.php'>
+                  <a
+                    href='https://www.bnl.gov/about/history/discoveries.php'
+                    rel='nofollow noreferrer noopener'>
                     History of discoveries at BNL
                   </a>
                 </Text>
@@ -103,30 +115,44 @@ export default function Home() {
             </Text>
             <div className={styles.linkContainer}>
               <Text color='orange' size='body-base' hover>
-                <a href='https://www.symmetrymagazine.org/'>
+                <a
+                  href='https://www.symmetrymagazine.org/'
+                  rel='nofollow noreferrer noopener'>
                   Symmetry Magazine
                 </a>
               </Text>
               <Text color='orange' size='body-base' hover>
-                <a href='https://www.quantamagazine.org/tag/particle-physics/'>
+                <a
+                  href='https://www.quantamagazine.org/tag/particle-physics/'
+                  rel='nofollow noreferrer noopener'>
                   Quanta Maganizne
                 </a>
               </Text>
               <Text color='orange' size='body-base' hover>
-                <a href='https://www.nature.com/subjects/particle-physics'>
+                <a
+                  href='https://www.nature.com/subjects/particle-physics'
+                  rel='nofollow noreferrer noopener'>
                   Nature Research
                 </a>
               </Text>
               <Text color='orange' size='body-base' hover>
-                <a href='https://news.fnal.gov/fermilab-at-work/'>
+                <a
+                  href='https://news.fnal.gov/fermilab-at-work/'
+                  rel='nofollow noreferrer noopener'>
                   Fermilab at Work
                 </a>
               </Text>
               <Text color='orange' size='body-base' hover>
-                <a href='https://cms.cern/'>CMS</a>
+                <a href='https://cms.cern/' rel='nofollow noreferrer noopener'>
+                  CMS
+                </a>
               </Text>
               <Text color='orange' size='body-base' hover>
-                <a href='https://particleadventure.org/'>Quiz</a>
+                <a
+                  href='https://particleadventure.org/'
+                  rel='nofollow noreferrer noopener'>
+                  Quiz
+                </a>
               </Text>
             </div>
             <Text size='body-base' custom='text-center pt-14 pb-4'>
