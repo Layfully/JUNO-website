@@ -16,15 +16,16 @@ import Particles from "react-particles-js";
 export default function Home() {
   return (
     <div className='bg-transparent overflow-x-hidden'>
-      <Particles canvasClassName='bg-black fixed -z-1 min-h-screen' />
       <Head>
         <title>Create Next App</title>
         <link rel='icon' href='/favicon.ico' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
+
       <header>
         <Menu />
       </header>
+      <Particles canvasClassName='bg-black fixed -z-1' />
 
       <main className={styles.main}>
         <HomeSection />
