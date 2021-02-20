@@ -1,4 +1,3 @@
-import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Menu from "../components/Menu/Menu";
 import Text from "../components/Text";
@@ -16,14 +15,6 @@ import Particles from "react-particles-js";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>JUNO</title>
-        <link rel='icon' href='/favicon.ico' />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'
-        />
-      </Head>
       <Particles canvasClassName='bg-black fixed -z-1' />
 
       <div className='bg-transparent overflow-x-hidden'>
