@@ -22,7 +22,6 @@ class SectionLink extends React.Component {
   }
 
   trackScrolling = (entries) => {
-    console.log(entries[0]);
     if (!this.props.isActive && !this.props.isScrolling) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
