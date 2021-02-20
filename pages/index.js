@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Menu from "../components/Menu/Menu";
 import Text from "../components/Text";
+import ParticlesWrapper from "../components/ParticlesWrapper";
 import HomeSection from "../components/HomeSection/HomeSection";
 import StorySection from "../components/StorySection/StorySection";
 import TeaserSection from "../components/TeaserSection/TeaserSection";
@@ -10,12 +11,11 @@ import ContactForm from "../components/ContactForm/ContactForm";
 import { FooterBackground } from "../components/Svg";
 import Slider from "../components/Slider/Slider";
 import sectionStyles from "./../styles/Home.module.css";
-import Particles from "react-particles-js";
 
 export default function Home() {
   return (
     <>
-      <Particles canvasClassName='bg-black fixed -z-1' />
+      <ParticlesWrapper />
 
       <div className='bg-transparent overflow-x-hidden'>
         <header>
