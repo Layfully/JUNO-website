@@ -13,8 +13,6 @@ const ParticlesWrapper = (props) => {
           },
         },
       }}
-      width={useWindowSize(false).width}
-      height={useWindowSize(false).height}
     />
   );
 };
