@@ -72,6 +72,7 @@ class HomeSection extends React.Component {
         <div className={styles.particleContainer}>
           {this.state.images.map((image, index) => (
             <Image
+              priority={true}
               key={index}
               src={image.src}
               alt={image.alt}
