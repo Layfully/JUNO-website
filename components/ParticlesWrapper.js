@@ -11,11 +11,16 @@ class ParticlesWrapper extends React.Component {
   }
 
   componentDidMount() {
+    this.setCanvasSize();
+    window.addEventListener("resize", this.setCanvasSize);
+  }
+
+  setCanvasSize = () => {
     if (typeof window !== "undefined") {
       this.setState({ height: window.outerHeight + 200 });
       this.setState({ width: window.outerWidth });
     }
-  }
+  };
 
   render() {
     return (
@@ -24,6 +29,15 @@ class ParticlesWrapper extends React.Component {
         height={this.state.height}
         width={this.state.width}
         params={{
+          particles: {
+            number: {
+              value: 80,
+              density: {
+                enable: true,
+                value_area: 2000,
+              },
+            },
+          },
           interactivity: {
             events: {
               resize: false,
