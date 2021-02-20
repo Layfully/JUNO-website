@@ -26,7 +26,7 @@ export default function Home() {
           <Menu />
         </header>
 
-        <Particles canvasClassName='bg-black fixed -z-1' />
+        <Particles canvasClassName='bg-black fixed -z-1 height-max' />
 
         <main className={styles.main}>
           <HomeSection />
