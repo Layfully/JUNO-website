@@ -60,6 +60,7 @@ class AffiliatesSection extends React.Component {
             <Fade left key={index}>
               <div className={styles.affiliateBox}>
                 <Image
+                  priority={true}
                   key={index}
                   src={image.src}
                   alt={image.alt}
