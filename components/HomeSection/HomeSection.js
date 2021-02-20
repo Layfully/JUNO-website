@@ -48,15 +48,16 @@ class HomeSection extends React.Component {
             ...
           </Text>
           <TypeIt
-            className='text-orange text-2xl'
+            className='text-orange text-2xl leading-none'
             options={{
               speed: 100,
+              startDelay: 0,
               cursorSpeed: 600,
               lifeLike: true,
               waitUntilVisible: true,
               element: "h2",
               cursorChar:
-                "<div class='bg-white absolute opacity-80' style='width:8px; top:10px; bottom:10px; right:-10px;'></div>",
+                "<div class='bg-white absolute opacity-80' style='width:8px; height:20px; top:calc(50% - 10px); right:-10px;'></div>",
             }}
             getBeforeInit={(instance) => {
               instance
