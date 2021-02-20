@@ -19,14 +19,16 @@ export default function Home() {
       <Head>
         <title>JUNO</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'
+        />
       </Head>
       <div className='bg-transparent overflow-x-hidden'>
         <header>
           <Menu />
         </header>
-
-        <Particles canvasClassName='bg-black fixed -z-1 height-max' />
+        <Particles canvasClassName='bg-black fixed z-1' />
 
         <main className={styles.main}>
           <HomeSection />
