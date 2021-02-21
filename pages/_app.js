@@ -2,6 +2,7 @@ import "swiper/swiper-bundle.min.css";
 import "../styles/globals.css";
 import { useEffect } from "react";
 import smoothscroll from "smoothscroll-polyfill";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -9,7 +10,16 @@ function MyApp({ Component, pageProps }) {
       smoothscroll.polyfill();
     }
   }, []);
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Head>
+        <title>JUNO</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;

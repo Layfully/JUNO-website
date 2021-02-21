@@ -1,0 +1,3 @@
+.affiliateBox {
+    @apply bg-customGray p-20 rounded-3xl flex justify-center items-center;
+}

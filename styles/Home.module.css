@@ -8,7 +8,7 @@
 }
 
 .section {
-    @apply flex items-center justify-center min-h-screen;
+    @apply flex items-center justify-center min-h-screen my-32;
 }
 
 .teaser {

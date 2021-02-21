@@ -15,9 +15,11 @@
     "postcss": "^8.2.4",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-particles-js": "^3.4.1",
     "react-reveal": "^1.2.2",
     "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^6.4.11",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "typeit-react": "^0.1.3"
   }
 }

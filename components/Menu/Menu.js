@@ -34,9 +34,12 @@ class Menu extends React.Component {
           href: "/#Contact",
         },
         {
-
           title: "Our team",
-          href: "/#OurTeam",
+          href: "/#Ourteam",
+        },
+        {
+          title: "Affiliates",
+          href: "/#Affiliates",
         },
         {
           title: "About",
@@ -142,7 +145,11 @@ class Menu extends React.Component {
 
           <div id={styles.socialMediaLinkList}>
             {this.state.socialMedia.map((socialMedium, index) => (
-              <a className='block' key={index} href={socialMedium.href}>
+              <a
+                className='block'
+                key={index}
+                href={socialMedium.href}
+                rel='nofollow noreferrer noopener'>
                 <SvgIcon icon={socialMedium.icon} />
               </a>
             ))}
