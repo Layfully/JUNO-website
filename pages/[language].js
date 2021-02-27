@@ -9,22 +9,20 @@ export default class extends React.Component {
     super(props);
     this.state = {
       story: props.res.data.story,
-      language: props.language,
+      language: null,
     };
   }
-
   static async getInitialProps({ query }) {
     StoryblokService.setQuery(query);
-    let language = query.language || "en";
-    let insertLanguage = language !== "en" ? `/${language}` : "";
+    let language = query.language;
+    let insertLanguage = language !== undefined ? `/${language}` : "";
     let pageResult = await StoryblokService.get(
-      `cdn/stories${insertLanguage}/juno`,
-      {
-        resolve_relations: "featured-posts.posts",
-      }
+      `cdn/stories${insertLanguage}/juno`
     );
 
     let languagesResult = await StoryblokService.get(`cdn/spaces/me`);
+
+    languagesResult.data.space.language_codes.push("en");
 
     return {
       res: pageResult,
@@ -44,13 +42,13 @@ export default class extends React.Component {
       <>
         <MetaHead
           blok={contentOfStory.meta[0]}
-          languageList={this.props.languageList}
+          currentLanguage={this.props.language}
         />
         <ParticlesWrapper />
         <Page
           content={contentOfStory}
-          language={this.state.language}
-          languageList={this.props.languageList}></Page>
+          languageList={this.props.languageList}
+          language={this.state.language}></Page>
       </>
     );
   }
