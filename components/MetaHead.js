@@ -60,6 +60,21 @@ const MetaHead = ({ blok, currentLanguage }) => (
     <meta name='twitter:image:alt' content={blok.twitter[0].image.alt} />
     <meta name='twitter:site' content={blok.twitter[0].site} />
     <meta name='twitter:creator' content={blok.twitter[0].creator} />
+    {blok.twitter[0].video.url ? (
+      <>
+        <meta name='twitter:player' content={blok.twitter[0].video.url} />
+        <meta
+          name='twitter:player:width'
+          content={blok.twitter[0].video_width}
+        />
+        <meta
+          name='twitter:player:height'
+          content={blok.twitter[0].video_height}
+        />
+      </>
+    ) : (
+      ""
+    )}
   </Head>
 );
 
