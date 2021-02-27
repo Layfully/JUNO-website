@@ -24,7 +24,12 @@ const MetaHead = ({ blok, currentLanguage }) => (
     <meta property='og:image:alt' content={blok.open_graph[0].image.alt} />
     <meta property='og:video' content={blok.open_graph[0].video.filename} />
     <meta property='og:site_name' content={blok.open_graph[0].site_name} />
-
+    <meta property='og:video:width' content={blok.open_graph[0].video_width} />
+    <meta
+      property='og:video:height'
+      content={blok.open_graph[0].video_height}
+    />
+    <meta property='og:video:mime' content='video/mp4' />
     {blok.language_list.map((language) =>
       language.short_code === currentLanguage ||
       (language.short_code === "en" && currentLanguage === null) ? (
