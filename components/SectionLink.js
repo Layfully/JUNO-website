@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Text from "./Text";
+import { withRouter } from "next/router";
 
 class SectionLink extends React.Component {
   constructor(props) {
@@ -38,7 +39,12 @@ class SectionLink extends React.Component {
 
     return (
       <Text custom={style} hover='hover:text-opacity-80'>
-        <Link href={this.props.section.href}>
+        <Link
+          href={
+            this.props.router.query.language
+              ? "/" + this.props.router.query.language + this.props.section.href
+              : this.props.section.href
+          }>
           <a onClick={this.props.onClick}>{this.props.section.title}</a>
         </Link>
       </Text>
@@ -46,4 +52,4 @@ class SectionLink extends React.Component {
   }
 }
 
-export default SectionLink;
+export default withRouter(SectionLink);
