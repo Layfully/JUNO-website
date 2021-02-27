@@ -44,7 +44,11 @@ const MetaHead = ({ blok, currentLanguage }) => (
     {blok.language_list.map((language) =>
       language.short_code === currentLanguage ||
       (language.short_code === "en" && currentLanguage === null) ? (
-        <meta property='og:locale' content={language.full_code} />
+        <meta
+          property='og:locale'
+          content={language.full_code}
+          key={language._uid}
+        />
       ) : (
         <meta
           property='og:locale:alternate'
