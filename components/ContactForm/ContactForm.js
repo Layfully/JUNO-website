@@ -3,6 +3,7 @@ import Submit from "./Submit";
 import Text from "../Text";
 import React from "react";
 import sectionStyles from "../../styles/Home.module.css";
+import SbEditable from "storyblok-react";
 
 const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -27,17 +28,14 @@ class ContactForm extends React.Component {
       message: null,
       errors: {
         name: {
-          message: "Name is required",
           active: false,
           interacted: false,
         },
         email: {
-          message: "Please enter valid email address.",
           active: false,
           interacted: false,
         },
         message: {
-          message: "Message is required",
           active: false,
           interacted: false,
         },
@@ -73,46 +71,44 @@ class ContactForm extends React.Component {
   render() {
     const isValid = validateForm(this.state.errors);
     return (
-      <section id='Contact' className={sectionStyles.section}>
-        <div className='bg-customGray w-full md:w-3/5 xl:w-1/2 rounded-3xl md:rounded-large mx-auto'>
-          <Text
-            size='h2'
-            color='true-orange'
-            custom='font-bold text-center pt-10 pb-6'>
-            Contact us
-          </Text>
-          <form
-            action='https://formspree.io/f/mpzobgvw'
-            method='POST'
-            className='flex flex-col items-center space-y-4'
-            noValidate>
-            <Input
-              name='name'
-              type='text'
-              label='Your name'
-              error={this.state.errors.name}
-              onChange={this.handleChange}
-            />
-            <Input
-              name='email'
-              type='email'
-              label='Email'
-              error={this.state.errors.email}
-              onChange={this.handleChange}
-            />
-            <Input
-              name='message'
-              type='textarea'
-              label='Tell us something about you...'
-              error={this.state.errors.message}
-              onChange={this.handleChange}
-            />
-            <input type='hidden' name='_subject' value={this.props.subject} />
-            <input type='text' name='_gotcha' className='hidden' />
-            <Submit value='Send' disabled={!isValid} />
-          </form>
-        </div>
-      </section>
+      <SbEditable content={this.props.blok}>
+        <section id='Contact' className={sectionStyles.section}>
+          <div className='bg-customGray w-full md:w-3/5 xl:w-1/2 rounded-3xl md:rounded-large mx-auto'>
+            <Text
+              size='h2'
+              color='true-orange'
+              custom='font-bold text-center pt-10 pb-6'>
+              {this.props.blok.title}
+            </Text>
+            <form
+              action='https://formspree.io/f/mpzobgvw'
+              method='POST'
+              className='flex flex-col items-center space-y-4'
+              noValidate>
+              {this.props.blok.field_data.map((field) => (
+                <Input
+                  key={field._uid}
+                  name={field.name}
+                  type={field.type}
+                  label={field.label}
+                  error={{
+                    ...{ message: field.validation_error },
+                    ...this.state.errors[field.name],
+                  }}
+                  onChange={this.handleChange}
+                />
+              ))}
+              <input
+                type='hidden'
+                name='_subject'
+                value={this.props.blok.subject}
+              />
+              <input type='text' name='_gotcha' className='hidden' />
+              <Submit value={this.props.blok.submit_text} disabled={!isValid} />
+            </form>
+          </div>
+        </section>
+      </SbEditable>
     );
   }
 }

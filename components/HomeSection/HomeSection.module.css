@@ -3,7 +3,7 @@
 }
 
 .particleContainer {
-    @apply flex gap-8 pt-20 px-6 items-center;
+    @apply flex gap-8 pt-10 px-6 items-center;
 }
 
 @screen sm {

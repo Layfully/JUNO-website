@@ -12,7 +12,6 @@ export default class extends React.Component {
       language: null,
     };
   }
-
   static async getInitialProps({ query }) {
     StoryblokService.setQuery(query);
     let language = query.language;
@@ -43,7 +42,7 @@ export default class extends React.Component {
       <>
         <MetaHead
           blok={contentOfStory.meta[0]}
-          currentLanguage={this.state.language}
+          currentLanguage={this.props.language}
         />
         <ParticlesWrapper />
         <Page
