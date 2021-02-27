@@ -22,7 +22,7 @@ const MetaHead = ({ blok, currentLanguage }) => (
     <meta property='og:description' content={blok.open_graph[0].description} />
     <meta property='og:image' content={blok.open_graph[0].image.filename} />
     <meta property='og:image:alt' content={blok.open_graph[0].image.alt} />
-    <menu property='og:video' content={blok.open_graph[0].video.filename} />
+    <meta property='og:video' content={blok.open_graph[0].video.filename} />
     <meta property='og:site_name' content={blok.open_graph[0].site_name} />
 
     {blok.language_list.map((language) =>
