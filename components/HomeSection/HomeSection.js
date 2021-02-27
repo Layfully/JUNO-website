@@ -4,37 +4,12 @@ import React from "react";
 import styles from "./HomeSection.module.css";
 import sectionStyles from "../../styles/Home.module.css";
 import TypeIt from "typeit-react";
+import SbEditable from "storyblok-react";
+import LanguageSelector from "../LanguageSelector";
 
-class HomeSection extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      images: [
-        {
-          src: "/d-meson.png",
-          alt: "d-meson",
-          width: 1130,
-          height: 1200,
-        },
-        {
-          src: "/j-psi.png",
-          alt: "j/psi",
-          width: 537,
-          height: 1824,
-        },
-        {
-          src: "/keon.png",
-          alt: "keon",
-          width: 1354,
-          height: 1042,
-        },
-      ],
-    };
-  }
-
-  render() {
-    return (
+const HomeSection = ({ blok, language, languageList }) => {
+  return (
+    <SbEditable content={blok}>
       <section
         id='Home'
         className={`${sectionStyles.section} flex-col`}
@@ -49,6 +24,10 @@ class HomeSection extends React.Component {
           </Text>
           <TypeIt
             className='text-orange text-2xl leading-none'
+            getBeforeInit={(instance) => {
+              instance.type(blok.project_subtitle);
+              return instance;
+            }}
             options={{
               speed: 100,
               startDelay: 0,
@@ -59,33 +38,25 @@ class HomeSection extends React.Component {
               cursorChar:
                 "<div class='bg-white absolute opacity-80' style='width:8px; height:20px; top:calc(50% - 10px); right:-10px;'></div>",
             }}
-            getBeforeInit={(instance) => {
-              instance
-                .type("The ultimate Particle Pyhs")
-                .pause(45)
-                .delete(3)
-                .type("hysics experience.")
-                .move(12);
-
-              return instance;
-            }}></TypeIt>
+          />
         </header>
         <div className={styles.particleContainer}>
-          {this.state.images.map((image, index) => (
+          {blok.hero_images.map((image) => (
             <Image
               priority={true}
-              key={index}
-              src={image.src}
+              key={image.id}
+              src={image.filename}
               alt={image.alt}
-              width={image.width}
-              height={image.height}
+              width={image.filename.split("/")[5].split("x")[0]}
+              height={image.filename.split("/")[5].split("x")[1]}
               layout='intrinsic'
             />
           ))}
         </div>
+        <LanguageSelector language={language} languageList={languageList} />
       </section>
-    );
-  }
-}
+    </SbEditable>
+  );
+};
 
 export default HomeSection;

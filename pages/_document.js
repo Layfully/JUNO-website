@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import StoryblokService from "../utils/storyblok-service";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -15,14 +16,14 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap'
             rel='stylesheet'
           />
-          <link
-            href='https://fonts.googleapis.com/css2?family=Lekton:wght@400;700&display=swap'
-            rel='stylesheet'
-          />
+
+          <link rel='preload' href='/fonts/Lekton/Lekton.otf' as='font' />
+          <link rel='preload' href='/fonts/Lekton/Lekton-Bold.otf' as='font' />
         </Head>
         <body>
           <Main />
           <NextScript />
+          {StoryblokService.bridge()}
         </body>
       </Html>
     );

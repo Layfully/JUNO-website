@@ -3,6 +3,7 @@ import SectionLink from "../SectionLink";
 import Hamburger from "../Hamburger/Hamburger";
 import { SvgIcon } from "../Svg";
 import styles from "./Menu.module.css";
+import SbEditable from "storyblok-react";
 
 class Menu extends React.Component {
   constructor(props) {
@@ -12,58 +13,6 @@ class Menu extends React.Component {
       isOpen: false,
       activeSection: 0,
       isScrollingAfterClick: false,
-      sections: [
-        {
-          title: "Home",
-          href: "/#Home",
-        },
-        {
-          title: "Story",
-          href: "/#Story",
-        },
-        {
-          title: "Teaser",
-          href: "/#Teaser",
-        },
-        {
-          title: "Progress",
-          href: "/#Progress",
-        },
-        {
-          title: "Contact us",
-          href: "/#Contact",
-        },
-        {
-          title: "Our team",
-          href: "/#Ourteam",
-        },
-        {
-          title: "Affiliates",
-          href: "/#Affiliates",
-        },
-        {
-          title: "About",
-          href: "/#About",
-        },
-      ],
-      socialMedia: [
-        {
-          icon: "Github",
-          href: "https://github.com/JPsiInVR",
-        },
-        {
-          icon: "Youtube",
-          href: "https://www.youtube.com/channel/UC9OGzydXjsrVAw2Dv6VZw9A",
-        },
-        {
-          icon: "Twitter",
-          href: "https://twitter.com/JUNO_2021",
-        },
-        {
-          icon: "Instagram",
-          href: "https://www.instagram.com/jpsiunderobservation/",
-        },
-      ],
     };
   }
 
@@ -103,7 +52,7 @@ class Menu extends React.Component {
     const element = document.getElementById(section.href.substring(2));
     element.scrollIntoView({ behavior: "smooth" });
 
-    if (this.state.sections[this.state.activeSection].href !== section.href) {
+    if (this.props.blok.link[this.state.activeSection].href !== section.href) {
       this.setScrolling(true);
     }
   };
@@ -114,48 +63,50 @@ class Menu extends React.Component {
     };
 
     return (
-      <>
-        <Hamburger isOpen={this.state.isOpen} onChange={this.toggleMenu} />
+      <SbEditable content={this.props.blok}>
+        <header>
+          <Hamburger isOpen={this.state.isOpen} onChange={this.toggleMenu} />
 
-        <nav
-          className={`${styles.menu} ${
-            this.state.isOpen
-              ? "transform translate-x-0"
-              : "transform translate-x-full"
-          }`}>
-          <ul id={styles.menuLinkList}>
-            {this.state.sections.map((section, index) => (
-              <li key={section.title}>
-                <SectionLink
-                  isScrolling={this.state.isScrollingAfterClick}
-                  isActive={index === this.state.activeSection}
-                  section={section}
-                  triggerActive={() => this.changeActiveSection(index)}
-                  onClick={() => {
-                    this.changeActiveSection(index);
-                    this.scrollToElement(section);
-                  }}
-                  resetScrolling={() => this.setScrolling(false)}
-                />
-              </li>
-            ))}
-          </ul>
+          <nav
+            className={`${styles.menu} ${
+              this.state.isOpen
+                ? "transform translate-x-0"
+                : "transform translate-x-full"
+            }`}>
+            <ul id={styles.menuLinkList}>
+              {this.props.blok.link.map((section, index) => (
+                <li key={section.title}>
+                  <SectionLink
+                    isScrolling={this.state.isScrollingAfterClick}
+                    isActive={index === this.state.activeSection}
+                    section={section}
+                    triggerActive={() => this.changeActiveSection(index)}
+                    onClick={() => {
+                      this.changeActiveSection(index);
+                      this.scrollToElement(section);
+                    }}
+                    resetScrolling={() => this.setScrolling(false)}
+                  />
+                </li>
+              ))}
+            </ul>
 
-          <div id={styles.activeSectionIndicator} style={offset} />
+            <div id={styles.activeSectionIndicator} style={offset} />
 
-          <div id={styles.socialMediaLinkList}>
-            {this.state.socialMedia.map((socialMedium, index) => (
-              <a
-                className='block'
-                key={index}
-                href={socialMedium.href}
-                rel='nofollow noreferrer noopener'>
-                <SvgIcon icon={socialMedium.icon} />
-              </a>
-            ))}
-          </div>
-        </nav>
-      </>
+            <div id={styles.socialMediaLinkList}>
+              {this.props.blok.socialLink.map((socialMedium) => (
+                <a
+                  className='block'
+                  key={socialMedium._uid}
+                  href={socialMedium.href}
+                  rel='nofollow noreferrer noopener'>
+                  <SvgIcon icon={socialMedium.icon} />
+                </a>
+              ))}
+            </div>
+          </nav>
+        </header>
+      </SbEditable>
     );
   }
 }
