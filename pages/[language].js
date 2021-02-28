@@ -9,7 +9,7 @@ export default class extends React.Component {
     super(props);
     this.state = {
       story: props.res.data.story,
-      language: null,
+      language: props.language,
     };
   }
   static async getInitialProps({ query }) {
@@ -42,7 +42,7 @@ export default class extends React.Component {
       <>
         <MetaHead
           blok={contentOfStory.meta[0]}
-          currentLanguage={this.props.language}
+          currentLanguage={this.state.language}
         />
         <ParticlesWrapper />
         <Page

@@ -13,7 +13,7 @@ const MetaHead = ({ blok, currentLanguage }) => (
         key={`${language._uid}-short`}
       />
     ))}
-    <link rel='alternate' hreflang='x-default' href={blok.x_default.url} />
+    <link rel='alternate' hrefLang='x-default' href={blok.x_default.url} />
     <meta name='author' content={blok.author} />
     <meta name='keywords' content={blok.keywords} />
     <meta name='description' content={blok.description} />
@@ -44,7 +44,11 @@ const MetaHead = ({ blok, currentLanguage }) => (
     {blok.language_list.map((language) =>
       language.short_code === currentLanguage ||
       (language.short_code === "en" && currentLanguage === null) ? (
-        <meta property='og:locale' content={language.full_code} />
+        <meta
+          property='og:locale'
+          content={language.full_code}
+          key={language._uid}
+        />
       ) : (
         <meta
           property='og:locale:alternate'
