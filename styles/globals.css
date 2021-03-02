@@ -20,6 +20,7 @@
 
 html {
     scroll-behavior: smooth;
+    hyphens: auto;
 }
 .ti-cursor {
     position: relative;

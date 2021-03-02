@@ -9,15 +9,14 @@ import SbEditable from "storyblok-react";
 const AffiliatesSection = ({ blok }) => {
   return (
     <SbEditable content={blok}>
-      <section
-        id='Affiliates'
-        className={`${sectionStyles.section} flex-col mb-80`}>
+      <section id='Affiliates' className={`${sectionStyles.section}mb-80`}>
         <div>
-          <Text size='h1' custom='font-bold text-center mb-20'>
+          <Text size='h1' custom='font-bold text-center mb-20 overflow-hidden'>
             {blok.title}
           </Text>
         </div>
-        <div className='space-y-10'>
+
+        <div className='space-y-10 '>
           {blok.universities.map((image, index) => (
             <Fade left key={index}>
               <div className={styles.affiliateBox}>
