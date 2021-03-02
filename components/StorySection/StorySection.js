@@ -8,11 +8,11 @@ const StorySection = ({ blok }) => {
   return (
     <SbEditable content={blok}>
       <section id='Story' className={styles.section}>
-        <ul className={`${styles.list} ${styles.listStar} space-y-8`}>
+        <ul className={`${styles.list} ${styles.listStar} space-y-8 w-full`}>
           {blok.stories.map((story) => (
             <Fade bottom key={story._uid}>
               <li>
-                <Text>{story.content}</Text>
+                <Text custom='sm:text-justify'>{story.content}</Text>
               </li>
             </Fade>
           ))}
