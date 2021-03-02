@@ -4,12 +4,13 @@ import StoryblokService from "../utils/storyblok-service";
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const lang = ctx.query.language || "en";
+    return { ...initialProps, lang };
   }
 
   render() {
     return (
-      <Html>
+      <Html lang={this.props.lang}>
         <Head>
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
