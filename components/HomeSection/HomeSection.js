@@ -23,7 +23,7 @@ const HomeSection = ({ blok, language, languageList }) => {
             ...
           </Text>
           <TypeIt
-            className='text-orange text-2xl leading-none m-0'
+            className='text-orange text-2xl leading-none'
             getBeforeInit={(instance) => {
               instance.type(blok.project_subtitle);
               return instance;
