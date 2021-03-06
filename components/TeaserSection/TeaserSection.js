@@ -7,6 +7,7 @@ const TeaserSection = ({ blok }) => (
     <section id='Teaser' className={styles.section}>
       <div className={styles.teaserContainer}>
         <iframe
+          title={blok.title}
           className={styles.teaser}
           src={blok.video_link.url}
           frameBorder='0'
