@@ -12,12 +12,12 @@ const ProgressSection = ({ blok }) => {
       <section id='Progress' className={sectionStyles.section}>
         <ol className={styles.progressBar}>
           {blok.milestones.map((milestone, index) => (
-            <div
+            <li
               key={milestone._uid}
               className={`${styles.elementWrapper} ${
                 index <= blok.finished ? styles.elementWrapperActive : ""
               }`}>
-              <li className={styles.element}>
+              <div className={styles.element}>
                 <Fade bottom>
                   <div className={styles.elementBox}>
                     <Text color='true-orange' custom='text-center'>
@@ -25,8 +25,8 @@ const ProgressSection = ({ blok }) => {
                     </Text>
                   </div>
                 </Fade>
-              </li>
-            </div>
+              </div>
+            </li>
           ))}
         </ol>
       </section>
