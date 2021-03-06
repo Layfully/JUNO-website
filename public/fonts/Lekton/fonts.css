@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "Lekton";
+    src: url("Lekton.otf");
+    font-style: normal;
+    font-weight: 400;
+    display: swap;
+}
+
+@font-face {
+    font-family: "Lekton";
+    src: url("Lekton-Bold.otf");
+    font-style: normal;
+    font-weight: 700;
+    display: swap;
+}
