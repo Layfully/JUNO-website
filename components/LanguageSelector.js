@@ -1,6 +1,7 @@
 import ReactCountryFlag from "react-country-flag";
 import React from "react";
 import Text from "../components/Text";
+import StoryblokService from "../utils/storyblok-service";
 
 class LanguageSelector extends React.Component {
   constructor(props) {
@@ -8,6 +9,14 @@ class LanguageSelector extends React.Component {
 
     this.state = {
       supportsEmoji: true,
+    };
+  }
+  static async getStaticProps(context) {
+    let languagesResult = await StoryblokService.get(`cdn/spaces/me`);
+    languagesResult.data.space.language_codes.push("en");
+
+    return {
+      languageList: languagesResult.data.space.language_codes,
     };
   }
 
