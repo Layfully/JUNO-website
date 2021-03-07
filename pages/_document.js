@@ -17,6 +17,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap'
             rel='stylesheet'
           />
+          <link rel='stylesheet' href='/fonts/Lekton/fonts.css' />
         </Head>
         <body>
           <Main />

@@ -25,3 +25,7 @@ html {
     align-items: center !important;
 }
 
+#tsparticles {
+    @apply bg-black fixed w-screen h-screen;
+    z-index: -1;
+}
