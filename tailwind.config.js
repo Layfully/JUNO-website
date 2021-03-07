@@ -18,6 +18,9 @@ module.exports = {
       fontFamily: {
         sans: ["Lekton", ...defaultTheme.fontFamily.sans],
       },
+      fontSize: {
+        "16xl": "12rem",
+      },
       colors: {
         orange: "#ff7900",
         orangeError: "#D32C07",
