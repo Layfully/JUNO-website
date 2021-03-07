@@ -4,19 +4,21 @@ import Text from "../components/Text";
 import StoryblokService from "../utils/storyblok-service";
 
 class LanguageSelector extends React.Component {
+  static async getStaticProps() {
+    let languagesResult = await StoryblokService.get(`cdn/spaces/me`);
+    languagesResult.data.space.language_codes.push("en");
+    return {
+      props: {
+        languageList: languagesResult.data.space.language_codes,
+      },
+    };
+  }
+
   constructor(props) {
     super(props);
 
     this.state = {
       supportsEmoji: true,
-    };
-  }
-  static async getStaticProps(context) {
-    let languagesResult = await StoryblokService.get(`cdn/spaces/me`);
-    languagesResult.data.space.language_codes.push("en");
-
-    return {
-      languageList: languagesResult.data.space.language_codes,
     };
   }
 
@@ -49,41 +51,42 @@ class LanguageSelector extends React.Component {
   render() {
     return (
       <div className='inline-block rounded-lg z-10 space-x-5 my-10'>
-        {this.props.languageList.map((language, index) => (
-          <Text
-            key={index}
-            hover
-            custom={`inline ${
-              this.props.language === language ||
-              (this.props.language === null && language === "en")
-                ? "text-opacity-100"
-                : "text-opacity-50"
-            }`}>
-            {this.state.supportsEmoji ? (
-              <a href={language === "en" ? "/" : `/${language}`}>
-                <ReactCountryFlag
-                  countryCode={language === "en" ? "us" : language}
-                  alt={`${language} - Flag`}
-                  className='pr-2'
-                />
-                {language.toUpperCase()}
-              </a>
-            ) : (
-              <a
-                href={language === "en" ? "/" : `/${language}`}
-                className='inline-flex items-center'>
-                <ReactCountryFlag
-                  countryCode={language === "en" ? "us" : language}
-                  className='mr-2'
-                  cdnUrl='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/'
-                  alt={`${language} - Flag`}
-                  svg
-                />
-                {language.toUpperCase()}
-              </a>
-            )}
-          </Text>
-        ))}
+        {this.props.languageList &&
+          this.props.languageList.map((language, index) => (
+            <Text
+              key={index}
+              hover
+              custom={`inline ${
+                this.props.language === language ||
+                (this.props.language === null && language === "en")
+                  ? "text-opacity-100"
+                  : "text-opacity-50"
+              }`}>
+              {this.state.supportsEmoji ? (
+                <a href={language === "en" ? "/" : `/${language}`}>
+                  <ReactCountryFlag
+                    countryCode={language === "en" ? "us" : language}
+                    alt={`${language} - Flag`}
+                    className='pr-2'
+                  />
+                  {language.toUpperCase()}
+                </a>
+              ) : (
+                <a
+                  href={language === "en" ? "/" : `/${language}`}
+                  className='inline-flex items-center'>
+                  <ReactCountryFlag
+                    countryCode={language === "en" ? "us" : language}
+                    className='mr-2'
+                    cdnUrl='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/'
+                    alt={`${language} - Flag`}
+                    svg
+                  />
+                  {language.toUpperCase()}
+                </a>
+              )}
+            </Text>
+          ))}
       </div>
     );
   }

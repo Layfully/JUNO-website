@@ -21,7 +21,7 @@ const FourOhFour = (props) => {
       </h2>
 
       <Text color='white' size='h2' custom='mt-6 text-opacity-100'>
-        Choose language and visit our page
+        Choose a language and visit our page
       </Text>
 
       <LanguageSelector languageList={props.languageList} />
