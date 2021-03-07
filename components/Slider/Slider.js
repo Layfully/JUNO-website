@@ -10,6 +10,7 @@ import Text from "../Text";
 import styles from "./Slider.module.css";
 import sectionStyles from "../../styles/Home.module.css";
 import SbEditable from "storyblok-react";
+import Image from "next/image";
 
 SwiperCore.use([Autoplay, Navigation, EffectCoverflow, Keyboard]);
 
@@ -61,10 +62,16 @@ class Slider extends React.Component {
             {this.props.blok.slides.map((slide) => (
               <SwiperSlide key={slide._uid}>
                 <div className=' bg-black relative flex flex-col justify-center'>
-                  <img
-                    src={slide.image.filename}
-                    alt={slide.image.alt}
-                    className={styles.image}></img>
+                  {slide.image.filename && (
+                    <Image
+                      src={slide.image.filename}
+                      alt={slide.image.alt}
+                      width={1300}
+                      height={1300}
+                      priority={true}
+                      className={styles.image}
+                      layout='intrinsic'></Image>
+                  )}
                   <div className='p-4 bg-customGray'>
                     <Text size='sm' custom='text-opacity-90 pb-3'>
                       {slide.university}

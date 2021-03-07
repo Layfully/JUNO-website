@@ -54,6 +54,7 @@ class LanguageSelector extends React.Component {
               <a href={language === "en" ? "/" : `/${language}`}>
                 <ReactCountryFlag
                   countryCode={language === "en" ? "us" : language}
+                  alt={`${language} - Flag`}
                   className='pr-2'
                 />
                 {language.toUpperCase()}
@@ -66,6 +67,7 @@ class LanguageSelector extends React.Component {
                   countryCode={language === "en" ? "us" : language}
                   className='mr-2'
                   cdnUrl='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/'
+                  alt={`${language} - Flag`}
                   svg
                 />
                 {language.toUpperCase()}

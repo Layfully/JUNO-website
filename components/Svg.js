@@ -5,6 +5,7 @@ const hoverIconStyle =
 
 const GithubIcon = () => (
   <svg
+    title='Github'
     className={hoverIconStyle}
     width='32'
     height='32'
@@ -20,6 +21,7 @@ const GithubIcon = () => (
 
 const YoutubeIcon = () => (
   <svg
+    title='Youtube'
     className={hoverIconStyle}
     width='32'
     height='32'
@@ -35,6 +37,7 @@ const YoutubeIcon = () => (
 
 const InstagramIcon = () => (
   <svg
+    title='Instagram'
     className={hoverIconStyle}
     width='32'
     height='32'
@@ -58,6 +61,7 @@ const InstagramIcon = () => (
 
 const TwitterIcon = () => (
   <svg
+    title='Twitter'
     className={hoverIconStyle}
     width='32'
     height='32'
