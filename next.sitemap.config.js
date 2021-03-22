@@ -1,10 +1,10 @@
 module.exports = {
-  siteUrl: "http://localhost:3000/",
+  siteUrl: "https://juno.physics.indiana.edu/",
   generateRobotsTxt: true,
   exclude: ["/server-sitemap.xml"],
   changefreq: "monthly",
   robotsTxtOptions: {
     policies: [{ userAgent: "*", allow: "/", disallow: "" }],
-    additionalSitemaps: ["http://localhost:3000/server-sitemap.xml"],
+    additionalSitemaps: ["https://juno.physics.indiana.edu/server-sitemap.xml"],
   },
 };
