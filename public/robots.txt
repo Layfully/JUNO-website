@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: 
+
+# Host
+Host: https://juno.physics.indiana.edu/
+
+# Sitemaps
+Sitemap: https://juno.physics.indiana.edu/sitemap.xml
+Sitemap: https://juno.physics.indiana.edu/server-sitemap.xml
