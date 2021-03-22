@@ -1,19 +1,8 @@
 import ReactCountryFlag from "react-country-flag";
 import React from "react";
 import Text from "../components/Text";
-import StoryblokService from "../utils/storyblok-service";
 
 class LanguageSelector extends React.Component {
-  static async getStaticProps() {
-    let languagesResult = await StoryblokService.get(`cdn/spaces/me`);
-    languagesResult.data.space.language_codes.push("en");
-    return {
-      props: {
-        languageList: languagesResult.data.space.language_codes,
-      },
-    };
-  }
-
   constructor(props) {
     super(props);
 
