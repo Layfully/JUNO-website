@@ -44,7 +44,7 @@ const HomeSection = ({ blok, language, languageList }) => {
           {blok.hero_images.map((image) => (
             <Image
               priority={true}
-              key={image.id}
+              key={image._uid}
               src={image.image_file.filename.split("/upload/")[1]}
               alt={image.image_file.alt}
               width={image.width}

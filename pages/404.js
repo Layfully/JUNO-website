@@ -1,6 +1,7 @@
 import ParticlesWrapper from "../components/ParticlesWrapper";
 import Text from "../components/Text";
 import LanguageSelector from "../components/LanguageSelector";
+import StoryblokService from "../utils/storyblok-service";
 
 const FourOhFour = (props) => {
   return (
@@ -28,4 +29,15 @@ const FourOhFour = (props) => {
     </main>
   );
 };
+export async function getStaticProps(context) {
+  const langaugeResult = await StoryblokService.get(`cdn/spaces/me`);
+  langaugeResult.data.space.language_codes.push("en");
+
+  return {
+    props: {
+      languageList: langaugeResult.data.space.language_codes,
+    },
+  };
+}
+
 export default FourOhFour;
