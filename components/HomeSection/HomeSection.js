@@ -45,10 +45,10 @@ const HomeSection = ({ blok, language, languageList }) => {
             <Image
               priority={true}
               key={image.id}
-              src={image.filename}
-              alt={image.alt}
-              width={image.filename.split("/")[5].split("x")[0]}
-              height={image.filename.split("/")[5].split("x")[1]}
+              src={image.image_file.filename.split("/upload/")[1]}
+              alt={image.image_file.alt}
+              width={image.width}
+              height={image.height}
               layout='intrinsic'
             />
           ))}

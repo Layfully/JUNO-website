@@ -64,7 +64,7 @@ class Slider extends React.Component {
                 <div className=' bg-black relative flex flex-col justify-center'>
                   {slide.image.filename && (
                     <Image
-                      src={slide.image.filename}
+                      src={slide.image.filename.split("/upload/")[1]}
                       alt={slide.image.alt}
                       width={1300}
                       height={1300}
