@@ -1,5 +1,6 @@
 module.exports = {
   images: {
-    domains: ["a.storyblok.com"],
+    loader: "cloudinary",
+    path: "https://res.cloudinary.com/junoteam/image/upload/",
   },
 };
