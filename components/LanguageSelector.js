@@ -57,6 +57,7 @@ class LanguageSelector extends React.Component {
                     countryCode={language === "en" ? "us" : language}
                     alt={`${language} - Flag`}
                     className='pr-2'
+                    style={{ verticalAlign: "baseline" }}
                   />
                   {language.toUpperCase()}
                 </a>

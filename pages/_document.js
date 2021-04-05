@@ -12,12 +12,28 @@ class MyDocument extends Document {
     return (
       <Html lang={this.props.lang}>
         <Head>
-          <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
-            href='https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap'
-            rel='stylesheet'
+            rel='preload'
+            as='font'
+            href='/fonts/Lekton.woff2'
+            type='font/woff2'
+            crossOrigin='anonymous'
           />
-          <link rel='stylesheet' href='/fonts/Lekton/fonts.css' />
+          <link
+            rel='preload'
+            as='font'
+            href='/fonts/AlegreyaSC.woff2'
+            type='font/woff2'
+            crossOrigin='anonymous'
+          />
+          <link
+            rel='preload'
+            as='font'
+            href='/fonts/Lekton-Bold.woff2'
+            type='font/woff2'
+            crossOrigin='anonymous'
+          />
+          <link rel='stylesheet ' href='/fonts/fonts.css' />
         </Head>
         <body>
           <Main />

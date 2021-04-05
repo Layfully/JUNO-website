@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Lekton';
+    src: url('Lekton.woff2') format('woff2'),
+        url('Lekton.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alegreya SC';
+    src: url('AlegreyaSC.woff2') format('woff2'),
+        url('AlegreyaSC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lekton';
+    src: url('Lekton-Bold.woff2') format('woff2'),
+        url('Lekton-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

@@ -21,13 +21,13 @@ const AffiliatesSection = ({ blok }) => {
             <Fade left key={index}>
               <div className={styles.affiliateBox}>
                 <Image
-                  priority={true}
                   key={image.id}
                   src={image.image_file.filename.split("/upload/")[1]}
                   alt={image.image_file.alt}
                   width={image.width / 1.5}
                   height={image.height / 1.5}
-                  layout='intrinsic'
+                  layout='responsive'
+                  sizes='80vw'
                 />
               </div>
             </Fade>
