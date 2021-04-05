@@ -22,16 +22,15 @@
     @apply mb-0;
 }
 
-.hamburgerLine:nth-last-child(2) {
-    @apply origin-bottom-left;
-}
-
 input:checked~.hamburgerContainer>.hamburgerLine:first-child {
-    @apply bg-orange opacity-60 transform rotate-45 translate-x-1 translate-y-px duration-300;
+    @apply bg-orange opacity-60 transform duration-300;
+    --tw-rotate: 45deg !important;
+    --tw-translate-x: 0.25rem !important;
+    --tw-translate-y: 1.5px !important;
 }
 
 input:checked~.hamburgerContainer>.hamburgerLine:nth-child(2) {
-    @apply opacity-0 transform scale-0;
+    @apply opacity-0;
 }
 
 input:checked~.hamburgerContainer>.hamburgerLine:last-child {

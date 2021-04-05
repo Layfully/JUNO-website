@@ -43,7 +43,6 @@ class Slider extends React.Component {
             navigation={true}
             autoHeight={true}
             centeredSlides={true}
-            preloadImages={true}
             coverflowEffect={{
               rotate: 40,
               stretch: 0,
@@ -68,9 +67,9 @@ class Slider extends React.Component {
                       alt={slide.image.alt}
                       width={1300}
                       height={1300}
-                      priority={true}
                       className={styles.image}
-                      layout='intrinsic'></Image>
+                      layout='responsive'
+                      sizes='60vw'></Image>
                   )}
                   <div className='p-4 bg-customGray'>
                     <Text size='sm' custom='text-opacity-90 pb-3'>

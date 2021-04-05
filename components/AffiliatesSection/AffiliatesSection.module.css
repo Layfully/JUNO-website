@@ -1,3 +1,32 @@
 .affiliateBox {
-    @apply bg-customGray p-20 rounded-3xl flex justify-center items-center;
+    @apply bg-customGray p-14 rounded-3xl;
+}
+
+.affiliateBox > div > div
+{
+    padding-top: 0 !important;
+}
+
+.affiliateBox > div {
+    height: 150px !important;
+}
+
+.affiliateBox > div > img
+{
+    max-width: 100% !important;
+    width: auto !important;
+    height: 100% !important;
+    min-height: unset !important;
+    min-width: unset !important;
+    object-fit: contain;
+}
+
+@screen  lg {
+    .affiliateBox {
+        @apply p-20;
+    }
+
+    .affiliateBox > div {
+        height: 200px !important;
+    }
 }

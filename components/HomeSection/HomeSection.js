@@ -43,13 +43,13 @@ const HomeSection = ({ blok, language, languageList }) => {
         <div className={styles.particleContainer}>
           {blok.hero_images.map((image) => (
             <Image
-              priority={true}
               key={image._uid}
               src={image.image_file.filename.split("/upload/")[1]}
               alt={image.image_file.alt}
               width={image.width}
               height={image.height}
-              layout='intrinsic'
+              layout='responsive'
+              sizes='10vw'
             />
           ))}
         </div>
