@@ -6,7 +6,11 @@ const Hamburger = (props) => (
     style={
       props.isOpen ? { "--tw-bg-opacity": 0 } : { "--tw-bg-opacity": 0.6 }
     }>
+    <label htmlFor='hamburger' className='sr-only'>
+      Hamburger toggle
+    </label>
     <input
+      id='hamburger'
       checked={props.isOpen}
       onChange={props.onChange}
       type='checkbox'
