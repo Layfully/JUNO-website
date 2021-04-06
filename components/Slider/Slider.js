@@ -43,7 +43,6 @@ class Slider extends React.Component {
             navigation={true}
             autoHeight={true}
             centeredSlides={true}
-            preloadImages={true}
             coverflowEffect={{
               rotate: 40,
               stretch: 0,
@@ -64,13 +63,13 @@ class Slider extends React.Component {
                 <div className=' bg-black relative flex flex-col justify-center'>
                   {slide.image.filename && (
                     <Image
-                      src={slide.image.filename}
+                      src={slide.image.filename.split("/upload/")[1]}
                       alt={slide.image.alt}
                       width={1300}
                       height={1300}
-                      priority={true}
                       className={styles.image}
-                      layout='intrinsic'></Image>
+                      layout='responsive'
+                      sizes='60vw'></Image>
                   )}
                   <div className='p-4 bg-customGray'>
                     <Text size='sm' custom='text-opacity-90 pb-3'>

@@ -1,5 +1,10 @@
-module.exports = {
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+module.exports = withBundleAnalyzer({
   images: {
-    domains: ["a.storyblok.com"],
+    loader: "cloudinary",
+    path: "https://res.cloudinary.com/junoteam/image/upload/",
   },
-};
+})
+

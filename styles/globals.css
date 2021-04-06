@@ -6,6 +6,7 @@ html {
     scroll-behavior: smooth;
     hyphens: auto;
 }
+
 .ti-cursor {
     position: relative;
     display: inline !important;
@@ -28,4 +29,14 @@ html {
 #tsparticles {
     @apply bg-black fixed w-screen h-screen;
     z-index: -1;
+}
+
+.background {
+    background: black;
+    background: linear-gradient(135deg, #040404, #000);
+    width: 100%;
+    height: 200%;
+    position: fixed;
+    z-index: -100;
+    overflow: hidden;
 }

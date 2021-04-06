@@ -3,18 +3,54 @@
 }
 
 .particleContainer {
-    @apply flex gap-8 pt-10 px-6 items-center;
+    @apply  gap-8 pt-10 px-6 items-center w-full;
+}
+
+.particleContainer > div > div
+{
+    padding-top: 0 !important;
+}
+
+.particleContainer > div {
+    height: 200px !important;
+    display: inline-block !important;
+    width: 33.33%;
+}
+
+.particleContainer > div > img
+{
+    max-width: 80% !important;
+    width: auto !important;
+    height: 100% !important;
+    min-height: unset !important;
+    min-width: unset !important;
+    object-fit: contain;
+}
+
+.particleContainer > div:last-child > img
+{
+    max-width: 100% !important;
 }
 
 @screen sm {
     .particleContainer {
-        @apply gap-10;
+        @apply px-20;
+    }
+
+    .particleContainer > div {
+        height: 250px !important;
+    }
+}
+
+@screen md {
+    .particleContainer > div {
+        height: 300px !important;
     }
 }
 
 @screen lg {
     .particleContainer {
-        @apply gap-14;
+        @apply px-10;
     }
     .titleContainer {
         @apply pt-10;
@@ -24,6 +60,10 @@
 @screen xl {
     .particleContainer {
         @apply px-28 gap-20;
+    }
+
+    .particleContainer > div {
+        height: 400px !important;
     }
 }
 

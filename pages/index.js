@@ -1,4 +1,3 @@
-import ParticlesWrapper from "../components/ParticlesWrapper";
 import StoryblokService from "../utils/storyblok-service";
 import Page from "../components/Page";
 import React from "react";
@@ -10,25 +9,6 @@ export default class extends React.Component {
     this.state = {
       story: props.res.data.story,
       language: null,
-    };
-  }
-
-  static async getInitialProps({ query }) {
-    StoryblokService.setQuery(query);
-    let language = query.language;
-    let insertLanguage = language !== undefined ? `/${language}` : "";
-    let pageResult = await StoryblokService.get(
-      `cdn/stories${insertLanguage}/juno`
-    );
-
-    let languagesResult = await StoryblokService.get(`cdn/spaces/me`);
-
-    languagesResult.data.space.language_codes.push("en");
-
-    return {
-      res: pageResult,
-      language,
-      languageList: languagesResult.data.space.language_codes,
     };
   }
 
@@ -45,7 +25,6 @@ export default class extends React.Component {
           blok={contentOfStory.meta[0]}
           currentLanguage={this.state.language}
         />
-        <ParticlesWrapper />
         <Page
           content={contentOfStory}
           languageList={this.props.languageList}
@@ -53,4 +32,28 @@ export default class extends React.Component {
       </>
     );
   }
+}
+
+export async function getStaticProps(context) {
+  const params = {
+    version: "published",
+  };
+
+  if (context.preview) {
+    params.version = "draft";
+    params.cv = Date.now();
+  }
+
+  const pageResult = await StoryblokService.get(`cdn/stories/juno`, params);
+  const languagesResult = await StoryblokService.get(`cdn/spaces/me`);
+  const defaultLanguage = "en";
+  languagesResult.data.space.language_codes.push(defaultLanguage);
+
+  return {
+    props: {
+      res: pageResult,
+      language: defaultLanguage,
+      languageList: languagesResult.data.space.language_codes,
+    },
+  };
 }
