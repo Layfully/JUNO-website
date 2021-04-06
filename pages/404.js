@@ -1,4 +1,3 @@
-import ParticlesWrapper from "../components/ParticlesWrapper";
 import Text from "../components/Text";
 import LanguageSelector from "../components/LanguageSelector";
 import StoryblokService from "../utils/storyblok-service";
@@ -6,7 +5,7 @@ import StoryblokService from "../utils/storyblok-service";
 const FourOhFour = (props) => {
   return (
     <main className=' text-center flex flex-col items-center justify-center h-screen w-screen px-4'>
-      <ParticlesWrapper />
+      <div className={"background"}></div>
       <h1
         className='font-bold text-orange text-9xl lg:text-16xl'
         style={{

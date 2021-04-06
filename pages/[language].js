@@ -1,4 +1,3 @@
-import ParticlesWrapper from "../components/ParticlesWrapper";
 import StoryblokService from "../utils/storyblok-service";
 import Page from "../components/Page";
 import React from "react";
@@ -24,7 +23,6 @@ export default class extends React.Component {
           blok={this.state.story.content.meta[0]}
           currentLanguage={this.state.language}
         />
-        <ParticlesWrapper />
         <Page
           content={this.state.story.content}
           languageList={this.props.languageList}
